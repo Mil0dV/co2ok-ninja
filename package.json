@@ -1,5 +1,5 @@
 {
-  "name": "Altruisto.com",
+  "name": "Co2ok.eco",
   "version": "2.1.7",
   "description": "Browser extension that allows users to raise money for charities through online shoppings with no extra costs",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/altruisto/altruisto.git"
+    "url": "git+https://github.com/CO2ok/CO2ok.git"
   },
   "author": "Daniel Wyrzykowski",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/altruisto/altruisto/issues"
+    "url": "https://github.com/CO2ok/CO2ok/issues"
   },
-  "homepage": "https://altruisto.com",
+  "homepage": "https://Co2ok.eco",
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",

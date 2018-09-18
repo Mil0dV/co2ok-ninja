@@ -1,12 +1,12 @@
-#AltruistoTopBarButton,
-#AltruistoTopBarButtonGrey,
-#AltruistoTopBarCTA {
+#CO2okTopBarButton,
+#CO2okTopBarButtonGrey,
+#CO2okTopBarCTA {
   display: inline-block;
   text-align: center;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
 }
 
-#AltruistoTopBar {
+#CO2okTopBar {
   width: 350px !important;
   max-height: 180px !important;
   min-height: 120px !important;
@@ -23,34 +23,34 @@
   line-height: 1.4285;
   font-size: 14px;
   color: #959595 !important;
-  animation: altruisto-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both;
+  animation: CO2ok-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both;
 }
 
-#AltruistoTopBarLogoLink {
+#CO2okTopBarLogoLink {
   float: left !important;
 }
 
-#AltruistoTopBarLogo {
+#CO2okTopBarLogo {
   max-width: 20px !important;
   margin: 8px;
   float: left;
 }
 
-#AltruistoTopBarIcon {
+#CO2okTopBarIcon {
   float: right;
   margin: 10px;
   cursor: pointer;
   max-width: 10px !important;
 }
 
-#AltruistoTopBarWelcome {
+#CO2okTopBarWelcome {
   font-size: 12px;
   width: 30%;
   float: left;
   margin: 9px 0 0;
 }
 
-#AltruistoTopBarCTA {
+#CO2okTopBarCTA {
   font-weight: 700;
   margin: 7px 0;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
@@ -58,7 +58,7 @@
   margin-top: 20px;
 }
 
-#AltruistoTopBarButton {
+#CO2okTopBarButton {
   border: 1px solid #4caf50;
   background: #4caf50;
   color: #fff;
@@ -72,13 +72,13 @@
   font-size: 14px !important;
 }
 
-#AltruistoTopBarButton:hover {
+#CO2okTopBarButton:hover {
   text-decoration: underline;
   background-color: #439a46;
   color: #fff;
 }
 
-#AltruistoTopBarButtonGrey {
+#CO2okTopBarButtonGrey {
   border: 1px solid #e0e1e2;
   background: #e0e1e2;
   color: #fff;
@@ -90,18 +90,18 @@
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
 }
 
-#AltruistoTopBarButtonGrey:hover {
+#CO2okTopBarButtonGrey:hover {
   text-decoration: underline;
   background-color: #cacbcd;
   color: #fff;
 }
 
-#AltruistoSmallText {
+#CO2okSmallText {
   font-weight: 300px;
   font-size: 12px;
 }
 
-@-webkit-keyframes altruisto-slide-in-right {
+@-webkit-keyframes CO2ok-slide-in-right {
   0% {
     -webkit-transform: translateX(1000px);
     transform: translateX(1000px);
@@ -115,7 +115,7 @@
   }
 }
 
-@keyframes altruisto-slide-in-right {
+@keyframes CO2ok-slide-in-right {
   0% {
     -webkit-transform: translateX(1000px);
     transform: translateX(1000px);

@@ -28,7 +28,7 @@
   ],
   "applications": {
     "gecko": {
-      "id": "altruisto@altruisto.com"
+      "id": "CO2ok@Co2ok.eco"
     }
   },
   "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ]

@@ -163,7 +163,7 @@ const DOMAIN = Object(__WEBPACK_IMPORTED_MODULE_1__helpers_extract_domain_js__["
  */
 function updateTopbar(activated) {
     let innerHTML = getInnerHTML(activated);
-    let topbarElement = document.getElementById('Altruisto');
+    let topbarElement = document.getElementById('CO2ok');
     topbarElement.innerHTML = innerHTML;
 }
 
@@ -188,7 +188,7 @@ function deactivateAffiliate() {
 function hideTopbar(){
     let updatedClosedWebsites = [];
 
-    document.getElementById("AltruistoTopBar").style.display = 'none';
+    document.getElementById("CO2okTopBar").style.display = 'none';
     //moveWebsite('-50px');
 
     chrome.storage.local.get({closedWebsites: []}, function(items) {
@@ -206,7 +206,7 @@ function hideTopbar(){
  * @param {boolean} activated Topbar's activation status.
  */
 function addListeners(activated){
-    document.getElementById("AltruistoTopBarIcon").addEventListener("click", function(){
+    document.getElementById("CO2okTopBarIcon").addEventListener("click", function(){
         hideTopbar();
     });
 }
@@ -220,13 +220,13 @@ function getContent(activated){
     let content;
 
     if(activated){
-        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="AltruistoSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
     }
     else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=https://altruisto.com/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=AltruistoTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
     }
     else {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=https://altruisto.com/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=AltruistoTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
     }
 
     return content;
@@ -261,7 +261,7 @@ function renderTopbar(activated) {
     let innerHTML = getInnerHTML(activated);
 
     let topbarElement = document.createElement('div');
-    topbarElement.id = 'Altruisto';
+    topbarElement.id = 'CO2ok';
     //arabic should be displayed from the right to the left
     if (chrome.i18n.getUILanguage() == 'ar') {
         topbarElement.dir = 'rtl';
@@ -391,7 +391,7 @@ const ASSETS_PATHS = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var H = __webpack_require__(12);
-module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"AltruistoTopBar\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.cancel",c,p,0)));t.b("\" id=\"AltruistoTopBarIcon\"> <a href=\"https://altruisto.com\" id=\"AltruistoTopBarLogoLink\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.icon",c,p,0)));t.b("\" id=\"AltruistoTopBarLogo\"></a><div id=\"AltruistoTopBarCTA\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div></div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"AltruistoTopBar\"><img src=\"{{ASSETS_PATHS.icons.cancel}}\" id=\"AltruistoTopBarIcon\"> <a href=\"https://altruisto.com\" id=\"AltruistoTopBarLogoLink\"><img src=\"{{ASSETS_PATHS.icons.icon}}\" id=\"AltruistoTopBarLogo\"></a><div id=\"AltruistoTopBarCTA\">{{{content}}}</div></div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
+module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"CO2okTopBar\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.cancel",c,p,0)));t.b("\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.icon",c,p,0)));t.b("\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div></div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"CO2okTopBar\"><img src=\"{{ASSETS_PATHS.icons.cancel}}\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"{{ASSETS_PATHS.icons.icon}}\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">{{{content}}}</div></div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
 
 /***/ }),
 /* 12 */
@@ -1200,12 +1200,12 @@ var Hogan = {};
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(16)(undefined);
+exports = module.exports = __webpack_require__(16)(false);
 // imports
 
 
 // module
-exports.push([module.i, "#AltruistoTopBarButton,#AltruistoTopBarButtonGrey,#AltruistoTopBarCTA{display:inline-block;text-align:center;font-family:Helvetica,Arial,Verdana,sans-serif!important}#AltruistoTopBar{width:350px!important;max-height:180px!important;min-height:120px!important;border:1px solid #e0e0e0;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:altruisto-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}#AltruistoTopBarLogoLink{float:left!important}#AltruistoTopBarLogo{max-width:20px!important;margin:8px;float:left}#AltruistoTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#AltruistoTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#AltruistoTopBarCTA{font-weight:700;margin:7px 0;width:240px;margin-top:20px}#AltruistoTopBarButton,#AltruistoTopBarCTA{font-family:Helvetica,Arial,Verdana,sans-serif!important}#AltruistoTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;text-transform:uppercase;font-size:14px!important}#AltruistoTopBarButton:hover{text-decoration:underline;background-color:#439a46;color:#fff}#AltruistoTopBarButtonGrey{border:1px solid #e0e1e2;background:#e0e1e2;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important}#AltruistoTopBarButtonGrey:hover{text-decoration:underline;background-color:#cacbcd;color:#fff}#AltruistoSmallText{font-weight:300px;font-size:12px}@-webkit-keyframes altruisto-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes altruisto-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "#CO2okTopBarButton,#CO2okTopBarButtonGrey,#CO2okTopBarCTA{display:inline-block;text-align:center;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBar{width:350px!important;max-height:180px!important;min-height:120px!important;border:1px solid #e0e0e0;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}#CO2okTopBarLogoLink{float:left!important}#CO2okTopBarLogo{max-width:20px!important;margin:8px;float:left}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{font-weight:700;margin:7px 0;width:240px;margin-top:20px}#CO2okTopBarButton,#CO2okTopBarCTA{font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;text-transform:uppercase;font-size:14px!important}#CO2okTopBarButton:hover{text-decoration:underline;background-color:#439a46;color:#fff}#CO2okTopBarButtonGrey{border:1px solid #e0e1e2;background:#e0e1e2;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButtonGrey:hover{text-decoration:underline;background-color:#cacbcd;color:#fff}#CO2okSmallText{font-weight:300px;font-size:12px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 

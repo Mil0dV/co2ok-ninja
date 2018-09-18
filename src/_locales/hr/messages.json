@@ -1,6 +1,6 @@
 {
     "name": {
-        "message": "Altruisto.com"
+        "message": "Co2ok.eco"
     },
     "description": {
         "message": "Skupljajte novac za najučinkovitije svjetske karitativne organizacije svakodnevnom kupnjom putem interneta i to bez dodatnih troškova."
@@ -18,7 +18,7 @@
         "message": "Prozor će se automatski zatvoriti za 5 sekundi"
     },
     "optionsTitle": {
-        "message": "Postavke ekstenzije Altruisto.com"
+        "message": "Postavke ekstenzije Co2ok.eco"
     },
     "optionsComingSoon": {
         "message": "Dolazi uskoro!"
@@ -27,7 +27,7 @@
         "message": "Obavijestite me kada pri kupnji imam priliku skupiti novac u humanitarne svrhe"
     },
     "optionsTopbarDescription": {
-        "message": "Svaki put kada posjetite internetske stranice nekog od naših partnera pri vrhu stranice vidjet ćete pločicu koja vam omogućava da jednim klikom skupljate novac u humanitarne svrhe. Ako kliknete tu tipku, tražit će vas da potvrdite da ćete podržati Altruisto pri kupnji na internetskoj stranici koju gledate. Nakon toga, obično 1-6% potrošenog iznosa bit će darovano humanitarnim organizacijama koje podržavamo."
+        "message": "Svaki put kada posjetite internetske stranice nekog od naših partnera pri vrhu stranice vidjet ćete pločicu koja vam omogućava da jednim klikom skupljate novac u humanitarne svrhe. Ako kliknete tu tipku, tražit će vas da potvrdite da ćete podržati CO2ok pri kupnji na internetskoj stranici koju gledate. Nakon toga, obično 1-6% potrošenog iznosa bit će darovano humanitarnim organizacijama koje podržavamo."
     },
     "optionsSuggestionsTitle": {
         "message": "Pokaži mi prijedloge dok pretražujem internet"

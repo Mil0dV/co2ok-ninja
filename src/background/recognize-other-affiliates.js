@@ -5,7 +5,7 @@ import { extractDomain } from '../helpers/extract-domain.js';
 */
 export function recognizeOtherAffiliates() {
     var affiliateRedirectDetected = false; 
-    var altruistoRedirectDetected = false;
+    var CO2okRedirectDetected = false;
     var redirectTabId;
 
 
@@ -16,8 +16,8 @@ export function recognizeOtherAffiliates() {
 
         if(isAffiliateRedirectLink(urlDomain) || isAffiliateRedirectLink(redirectDomain)){
             affiliateRedirectDetected = true;
-            if(isAltruistoLink(details.url) || isAltruistoLink(details.redirectUrl)){
-                altruistoRedirectDetected = true;
+            if(isCO2okLink(details.url) || isCO2okLink(details.redirectUrl)){
+                CO2okRedirectDetected = true;
             }
             else {
                 redirectTabId = currentTab;
@@ -28,20 +28,20 @@ export function recognizeOtherAffiliates() {
     chrome.webRequest.onCompleted.addListener(function(details){
         var currentTab = details.tabId;
 
-        if(affiliateRedirectDetected && !altruistoRedirectDetected){
+        if(affiliateRedirectDetected && !CO2okRedirectDetected){
             if(redirectTabId == currentTab){
                 disableAffiliate(extractDomain(details.url));
                 
                 //reset triggers
                 affiliateRedirectDetected = false;
-                altruistoRedirectDetected = false;
+                CO2okRedirectDetected = false;
                 redirectTabId = 0;
             }
         } 
-        else if(affiliateRedirectDetected && altruistoRedirectDetected){
+        else if(affiliateRedirectDetected && CO2okRedirectDetected){
             //reset triggers
             affiliateRedirectDetected = false;
-            altruistoRedirectDetected = false;
+            CO2okRedirectDetected = false;
         }
     }, {urls: ['<all_urls>'], types: ["main_frame"]});
 }
@@ -63,13 +63,13 @@ function disableAffiliate(domain) {
 }
 
 /**
-* Check if given URL is altruisto's affiliate link by comparing it against our stamps
+* Check if given URL is CO2ok's affiliate link by comparing it against our stamps
 *
 * @returns {boolean}
 */
-function isAltruistoLink(url){
-    var altruistoStamps = ['id=XK9XruzkyUo', '8106588'];
-    if(new RegExp(altruistoStamps.join("|")).test(url)) {
+function isCO2okLink(url){
+    var CO2okStamps = ['id=XK9XruzkyUo', '8106588'];
+    if(new RegExp(CO2okStamps.join("|")).test(url)) {
         return true;
     }
     else {

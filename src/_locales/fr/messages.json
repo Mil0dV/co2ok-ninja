@@ -1,6 +1,6 @@
 {
     "name": {
-        "message": "Altruisto.com"
+        "message": "Co2ok.eco"
     },
     "description": {
         "message": "Collectez de l’argent pour les œuvres caritatives les plus efficaces du monde grâce à vos achats en ligne quotidiens, sans coûts supplémentaires."
@@ -18,7 +18,7 @@
         "message": "Cette fenêtre se fermera automatiquement dans 5 secondes"
     },
     "optionsTitle": {
-        "message": "Paramètres de l’extension Altruisto.com"
+        "message": "Paramètres de l’extension Co2ok.eco"
     },
     "optionsComingSoon": {
         "message": "Prochainement !"
@@ -27,7 +27,7 @@
         "message": "Informez-moi quand j'ai la possibilité de collecter de l’argent pour des œuvres caritatives grâce à mes achats"
     },
     "optionsTopbarDescription": {
-        "message": "Chaque fois que vous irez sur le site Web de nos partenaires, vous verrez une barre en haut d’une page vous donnant la possibilité de collecter de l’argent pour des œuvres caritatives, sur simple pression d’un bouton. Si vous cliquez sur ce bouton, il vous sera demandé de confirmer que vous voulez soutenir Altruisto grâce à vos achats sur le site que vous consultez. Ensuite, une commission se montant généralement de 1 à 6 % de votre achat sera donnée aux œuvres caritatives que nous soutenons."
+        "message": "Chaque fois que vous irez sur le site Web de nos partenaires, vous verrez une barre en haut d’une page vous donnant la possibilité de collecter de l’argent pour des œuvres caritatives, sur simple pression d’un bouton. Si vous cliquez sur ce bouton, il vous sera demandé de confirmer que vous voulez soutenir CO2ok grâce à vos achats sur le site que vous consultez. Ensuite, une commission se montant généralement de 1 à 6 % de votre achat sera donnée aux œuvres caritatives que nous soutenons."
     },
     "optionsSuggestionsTitle": {
         "message": "Montrez-moi des suggestions pendant que je navigue sur Internet"

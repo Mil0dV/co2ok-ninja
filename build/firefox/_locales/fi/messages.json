@@ -1,6 +1,6 @@
 {
     "name": {
-        "message": "Altruisto.com"
+        "message": "Co2ok.eco"
     },
     "description": {
         "message": "Kerää rahaa maailman tehokkaimmille hyväntekeväisyysjärjestöille tekemällä jokapäiväisiä ostoksiasi verkossa ilman ylimääräisiä kuluja."
@@ -18,7 +18,7 @@
         "message": "Tämä ikkuna suljetaan automaattisesti 5 sekunnin kuluttua"
     },
     "optionsTitle": {
-        "message": "Altruisto.com-laajennuksen asetukset"
+        "message": "Co2ok.eco-laajennuksen asetukset"
     },
     "optionsComingSoon": {
         "message": "Tulossa pian!"
@@ -27,7 +27,7 @@
         "message": "Pyydän informoimaan minua, milloin minulla on mahdollisuus kerätä rahaa hyväntekeväisyysjärjestöjä varten"
     },
     "optionsTopbarDescription": {
-        "message": "Aina kun käyt yhdellä kumppaneidemme verkkosivustoista, näet rivin sivun yläosassa, mikä antaa sinulle mahdollisuuden kerätä rahaa hyväntekeväisyysjärjestöille painamalla vain yhtä painiketta. Jos klikkaat tätä painiketta, sinua pyydetään vahvistamaan, että haluat tukea Altruistoa ostostesi kautta sivustolla, jota katselet. Sen jälkeen yleensä 1-6 % ostostesi arvosta lahjoitetaan tukemillemme hyväntekeväisyysjärjestöille."
+        "message": "Aina kun käyt yhdellä kumppaneidemme verkkosivustoista, näet rivin sivun yläosassa, mikä antaa sinulle mahdollisuuden kerätä rahaa hyväntekeväisyysjärjestöille painamalla vain yhtä painiketta. Jos klikkaat tätä painiketta, sinua pyydetään vahvistamaan, että haluat tukea CO2oka ostostesi kautta sivustolla, jota katselet. Sen jälkeen yleensä 1-6 % ostostesi arvosta lahjoitetaan tukemillemme hyväntekeväisyysjärjestöille."
     },
     "optionsSuggestionsTitle": {
         "message": "Näytä minulle ehdotuksia selatessani internetiä"

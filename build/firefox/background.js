@@ -182,7 +182,7 @@ function onInstalled() {
 
         //open welcome page for new installs
         if(details.reason == "install"){
-            browser.tabs.create({url: "https://altruisto.com/welcome/"});
+            browser.tabs.create({url: "https://Co2ok.eco/welcome/"});
         }
     });
 }
@@ -224,7 +224,7 @@ function onAlarm() {
 
 
  /**
- * When user requests an altruisto.com redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
+ * When user requests an Co2ok.eco redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
  */ 
 function activateMonetizing() {
     browser.webRequest.onBeforeRequest.addListener(function(details){ //byc moze onCompleteRedirect - zalezy ktorym latwiej znalezc od pierwszego do ostatniego redirecta
@@ -233,7 +233,8 @@ function activateMonetizing() {
 
         var data = {domain: redirectDomain, timestamp: details.timeStamp}
         updateActivatedAffiliates(data);
-    }, {urls: ["https://altruisto.com/redirect*"], types: ["main_frame"]}); 
+    // }, {urls: ["https://Co2ok.eco/redirect*"], types: ["main_frame"]}); 
+    }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
 }
 
  /**
@@ -339,7 +340,7 @@ function removeFromActivatedAffiliates(domain){
 */
 function recognizeOtherAffiliates() {
     var affiliateRedirectDetected = false; 
-    var altruistoRedirectDetected = false;
+    var CO2okRedirectDetected = false;
     var redirectTabId;
 
 
@@ -350,8 +351,8 @@ function recognizeOtherAffiliates() {
 
         if(isAffiliateRedirectLink(urlDomain) || isAffiliateRedirectLink(redirectDomain)){
             affiliateRedirectDetected = true;
-            if(isAltruistoLink(details.url) || isAltruistoLink(details.redirectUrl)){
-                altruistoRedirectDetected = true;
+            if(isCO2okLink(details.url) || isCO2okLink(details.redirectUrl)){
+                CO2okRedirectDetected = true;
             }
             else {
                 redirectTabId = currentTab;
@@ -362,20 +363,20 @@ function recognizeOtherAffiliates() {
     browser.webRequest.onCompleted.addListener(function(details){
         var currentTab = details.tabId;
 
-        if(affiliateRedirectDetected && !altruistoRedirectDetected){
+        if(affiliateRedirectDetected && !CO2okRedirectDetected){
             if(redirectTabId == currentTab){
                 disableAffiliate(Object(__WEBPACK_IMPORTED_MODULE_0__helpers_extract_domain_js__["a" /* extractDomain */])(details.url));
                 
                 //reset triggers
                 affiliateRedirectDetected = false;
-                altruistoRedirectDetected = false;
+                CO2okRedirectDetected = false;
                 redirectTabId = 0;
             }
         } 
-        else if(affiliateRedirectDetected && altruistoRedirectDetected){
+        else if(affiliateRedirectDetected && CO2okRedirectDetected){
             //reset triggers
             affiliateRedirectDetected = false;
-            altruistoRedirectDetected = false;
+            CO2okRedirectDetected = false;
         }
     }, {urls: ['<all_urls>'], types: ["main_frame"]});
 }
@@ -397,13 +398,13 @@ function disableAffiliate(domain) {
 }
 
 /**
-* Check if given URL is altruisto's affiliate link by comparing it against our stamps
+* Check if given URL is CO2ok's affiliate link by comparing it against our stamps
 *
 * @returns {boolean}
 */
-function isAltruistoLink(url){
-    var altruistoStamps = ['id=XK9XruzkyUo', '8106588'];
-    if(new RegExp(altruistoStamps.join("|")).test(url)) {
+function isCO2okLink(url){
+    var CO2okStamps = ['id=XK9XruzkyUo', '8106588'];
+    if(new RegExp(CO2okStamps.join("|")).test(url)) {
         return true;
     }
     else {

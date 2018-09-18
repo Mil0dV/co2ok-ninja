@@ -8,7 +8,7 @@ const DOMAIN = extractDomain(location.href);
  */
 function updateTopbar(activated) {
     let innerHTML = getInnerHTML(activated);
-    let topbarElement = document.getElementById('Altruisto');
+    let topbarElement = document.getElementById('CO2ok');
     topbarElement.innerHTML = innerHTML;
 }
 
@@ -33,7 +33,7 @@ function deactivateAffiliate() {
 function hideTopbar(){
     let updatedClosedWebsites = [];
 
-    document.getElementById("AltruistoTopBar").style.display = 'none';
+    document.getElementById("CO2okTopBar").style.display = 'none';
     //moveWebsite('-50px');
 
     chrome.storage.local.get({closedWebsites: []}, function(items) {
@@ -51,7 +51,7 @@ function hideTopbar(){
  * @param {boolean} activated Topbar's activation status.
  */
 function addListeners(activated){
-    document.getElementById("AltruistoTopBarIcon").addEventListener("click", function(){
+    document.getElementById("CO2okTopBarIcon").addEventListener("click", function(){
         hideTopbar();
     });
 }
@@ -65,13 +65,13 @@ function getContent(activated){
     let content;
 
     if(activated){
-        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="AltruistoSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
     }
     else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=https://altruisto.com/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=AltruistoTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
     }
     else {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=https://altruisto.com/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=AltruistoTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
     }
 
     return content;
@@ -106,7 +106,7 @@ function renderTopbar(activated) {
     let innerHTML = getInnerHTML(activated);
 
     let topbarElement = document.createElement('div');
-    topbarElement.id = 'Altruisto';
+    topbarElement.id = 'CO2ok';
     //arabic should be displayed from the right to the left
     if (chrome.i18n.getUILanguage() == 'ar') {
         topbarElement.dir = 'rtl';

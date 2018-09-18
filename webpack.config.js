@@ -63,9 +63,9 @@ module.exports = [
                 { from: PATHS.src + '/manifest.json',
                   transform: function(content){
                       let newContent = content.toString();
-                      newContent = newContent.replace('Altruisto.com Chrome Extension', 'Altruisto.com');
+                      newContent = newContent.replace('Co2ok.eco Chrome Extension', 'Co2ok.eco');
                       newContent = newContent.replace(/"options_page":\s"(.*)"/i, '"options_ui": {\n    "page": "$1"\n  }');
-                      newContent = newContent.replace('"web_accessible_resources":', '"applications": {\n    "gecko": {\n      "id": "altruisto@altruisto.com"\n    }\n  },\n  "web_accessible_resources":');
+                      newContent = newContent.replace('"web_accessible_resources":', '"applications": {\n    "gecko": {\n      "id": "CO2ok@Co2ok.eco"\n    }\n  },\n  "web_accessible_resources":');
                       return newContent;
                   } },
                 { from: PATHS.src + '/assets', to: PATHS.build + '/firefox/assets' },

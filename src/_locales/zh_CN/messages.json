@@ -1,6 +1,6 @@
 {
     "name": {
-        "message": "Altruisto.com"
+        "message": "Co2ok.eco"
     },
     "description": {
         "message": "通过您日常的网上购物来为全球最有效的慈善机构筹款，同时无需多付分毫。"
@@ -18,7 +18,7 @@
         "message": "本窗口将在5秒后自动关闭"
     },
     "optionsTitle": {
-        "message": "Altruisto.com扩展程序设置"
+        "message": "Co2ok.eco扩展程序设置"
     },
     "optionsComingSoon": {
         "message": "即将推出！"
@@ -27,7 +27,7 @@
         "message": "当我在购物期间有机会为慈善机构筹款时，请通知我"
     },
     "optionsTopbarDescription": {
-        "message": "每当您浏览我们其中一家合作伙伴的网站时，您都将看到页面顶部的一个功能条，让您有机会通过点击功能条上的一个按钮来为慈善机构筹款。点击该按钮后，系统将要求您确认，您是否希望通过在该网站上购物来支持Altruisto。此后，您的购物金额的1-6%将捐赠给我们支持的慈善机构。"
+        "message": "每当您浏览我们其中一家合作伙伴的网站时，您都将看到页面顶部的一个功能条，让您有机会通过点击功能条上的一个按钮来为慈善机构筹款。点击该按钮后，系统将要求您确认，您是否希望通过在该网站上购物来支持CO2ok。此后，您的购物金额的1-6%将捐赠给我们支持的慈善机构。"
     },
     "optionsSuggestionsTitle": {
         "message": "在我浏览互联网时显示建议"
