@@ -56,22 +56,100 @@ function addListeners(activated){
     });
 }
 
+
+// change logo color on mouseover
+
+ function chgLogo()
+ {
+
+   let confirmcta = document.querySelector('.confirmButt');
+     confirmcta.addEventListener('mouseover', function(){
+
+        co2logo = 'assets/img/co2okwhite.png';
+
+     })
+console.log('it work');
+     newLogo = 'assets/img/co2okwhite.png';
+
+ }
+
+
+function CO2okTopBarButton(url)
+{
+
+  let co2logo = 'assets/img/co2ok-logo.png';
+  let co2logowhite = 'assets/img/co2okwhite.png';
+
+  let confirmButt = `
+
+    <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
+
+      <p>SHOP</p>
+      <img src='${chrome.extension.getURL(co2logo)}' alt=''>
+
+    </a>
+
+  `;
+
+  return confirmButt
+
+}
+
+
+function thanksBar()
+{
+
+  let gifsArr = ["assets/img/happy-globe.mp4", "assets/img/happy-piggy-loop.mp4", "assets/img/happy-flower.mp4", 'assets/img/cat-high-five.mp4'];
+  let randSrc = Math.floor(Math.random() * gifsArr.length);
+  let thanksBar = `
+
+    <div class='thanksBar'>
+
+      <!--<img src='${chrome.extension.getURL("assets/img/happy-flower.gif")}' alt=''>-->
+      <video width='110' height='100' autoplay loop>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
+      </video>
+      <p>You are now shopping climate neutral on this website</p>
+
+    </div>
+
+  `;
+
+  return thanksBar;
+
+}
+
+
 /**
  * Return topbar's content based on activation status.
  *
  * @param {boolean} activated Topbar's activation status.
  */
+
 function getContent(activated){
     let content;
 
+    let topbarActivatedInfo = '<p class="topbarActivatedInfo">Start shopping climate neutral on this website by clicking here</p>';
+
+
     if(activated){
-        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+      // chrome.i18n.getMessage('topbarActivatedInfo') ==> You are now shopping climate neutral on this website
+      //als de klant kies via de confirm page om climate neutral te shoppen wordt deze if statement uitgevoerd
+      //chrome.i18n.getMessage('topbarActivatedClose') ==> de topbar wordt over 5 sec gesloten
+
+        //content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+        content = thanksBar();
     }
     else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+      //content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+      content = topbarActivatedInfo + CO2okTopBarButton('confirm.php');
+
     }
     else {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+
+        //content = chrome.i18n.getMessage('topbarActivateInfo') + chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = topbarActivatedInfo + CO2okTopBarButton('redirect.php');;
     }
 
     return content;
@@ -121,7 +199,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 6000);
+        }, 5000);
     }
 
     addListeners(activated);

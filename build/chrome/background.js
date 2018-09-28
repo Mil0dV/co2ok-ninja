@@ -202,7 +202,7 @@ function onAlarm() {
             case 'clearClosedWebsites' :
                 chrome.storage.local.remove(['closedWebsites']);
             break;
-            
+
             case 'clearDisabledWebsites' :
                 chrome.storage.local.remove(['disabledWebsites']);
             break;
@@ -213,6 +213,7 @@ function onAlarm() {
         }
     });
 }
+
 
 /***/ }),
 /* 5 */
