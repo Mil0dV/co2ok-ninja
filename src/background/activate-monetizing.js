@@ -1,7 +1,7 @@
 import { extractDomain } from '../helpers/extract-domain.js';
 
  /**
- * When user requests an Co2ok.eco redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
+ * When user requests an CO2ok.Ninja redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
  */ 
 export function activateMonetizing() {
     chrome.webRequest.onBeforeRequest.addListener(function(details){ //byc moze onCompleteRedirect - zalezy ktorym latwiej znalezc od pierwszego do ostatniego redirecta
@@ -10,8 +10,8 @@ export function activateMonetizing() {
 
         var data = {domain: redirectDomain, timestamp: details.timeStamp}
         updateActivatedAffiliates(data);
-    // }, {urls: ["https://Co2ok.eco/redirect*"], types: ["main_frame"]}); 
-    }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
+    }, {urls: ["https://CO2ok.Ninja/dojo/redirect*"], types: ["main_frame"]}); 
+    // }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
 }
 
  /**

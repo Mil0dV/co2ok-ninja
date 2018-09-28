@@ -80,9 +80,10 @@ function CO2okTopBarButton(url)
   let co2logo = 'assets/img/co2ok-logo.png';
   let co2logowhite = 'assets/img/co2okwhite.png';
 
+  //   <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
   let confirmButt = `
 
-    <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
+    <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'> 
 
       <div class="shopText"><p>Shop</p></div>
       <img src='${chrome.extension.getURL(co2logo)}' alt=''>

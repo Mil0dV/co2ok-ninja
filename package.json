@@ -1,7 +1,7 @@
 {
-  "name": "Co2ok.eco",
-  "version": "2.1.7",
-  "description": "Browser extension that allows users to raise money for charities through online shoppings with no extra costs",
+  "name": "CO2ok.Ninja",
+  "version": "0.1.0",
+  "description": "Browser extension that allows users to shop climate neutral with no extra costs",
   "main": "index.js",
   "scripts": {
     "lint": "npm-run-all lint:*",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CO2ok/CO2ok.git"
+    "url": "git+https://github.com/Mil0dV/co2ok-ninja.git"
   },
-  "author": "Daniel Wyrzykowski",
+  "author": "CO2ok",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/CO2ok/CO2ok/issues"
+    "url": "https://github.com/Mil0dV/co2ok-ninja/issues"
   },
-  "homepage": "https://Co2ok.eco",
+  "homepage": "https://CO2ok.Ninja",
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
