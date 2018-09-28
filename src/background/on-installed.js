@@ -12,7 +12,7 @@ export function onInstalled() {
 
         //open welcome page for new installs
         if(details.reason == "install"){
-            chrome.tabs.create({url: "https://Co2ok.eco/welcome/"});
+            chrome.tabs.create({url: "https://CO2ok.Ninja/welcome/"});
         }
     });
 }

@@ -1,6 +1,6 @@
 {
     "name": {
-        "message": "Co2ok.eco"
+        "message": "CO2ok.Ninja"
     },
     "description": {
         "message": "Kerää rahaa maailman tehokkaimmille hyväntekeväisyysjärjestöille tekemällä jokapäiväisiä ostoksiasi verkossa ilman ylimääräisiä kuluja."
@@ -18,7 +18,7 @@
         "message": "Tämä ikkuna suljetaan automaattisesti 5 sekunnin kuluttua"
     },
     "optionsTitle": {
-        "message": "Co2ok.eco-laajennuksen asetukset"
+        "message": "CO2ok.Ninja-laajennuksen asetukset"
     },
     "optionsComingSoon": {
         "message": "Tulossa pian!"
