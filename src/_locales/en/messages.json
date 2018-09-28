@@ -6,16 +6,16 @@
         "message": "Make your shoppping climate neutral! (no extra costs)"
     },
     "topbarActivateInfo": {
-        "message": "Start shopping climate neutral on this website by clicking here: "
+        "message": "Start shopping climate neutral on this website"
     },
     "topbarActivateButton": {
         "message": "Shop climate neutral"
     },
     "topbarActivatedInfo": {
-        "message": "You are now shopping climate neutral on this website. "
+        "message": "You are now shopping climate neutral"
     },
     "topbarActivatedClose": {
-        "message": "This windows will be automatically closed in 5 seconds"
+        "message": "This window will be automatically closed in 5 seconds"
     },
     "optionsTitle": {
         "message": "Co2ok.eco extension options"
@@ -42,6 +42,6 @@
         "message": "When you use a search engine like Google, Bing, or DuckDuckGo, links leading to one of our partners' websites will be highlighted so you can immediately know which websites you can raise money with."
     },
     "optionsThankYou": {
-        "message": "By the way - thanks for being awesome and using our extension :) Cheers! "
+        "message": "By the way - thanks for being awesome and helping us fight climate change :) Cheers! "
     }
 }
