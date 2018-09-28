@@ -211,22 +211,100 @@ function addListeners(activated){
     });
 }
 
+
+// change logo color on mouseover
+
+ function chgLogo()
+ {
+
+   let confirmcta = document.querySelector('.confirmButt');
+     confirmcta.addEventListener('mouseover', function(){
+
+        co2logo = 'assets/img/co2okwhite.png';
+
+     })
+console.log('it work');
+     newLogo = 'assets/img/co2okwhite.png';
+
+ }
+
+
+function CO2okTopBarButton(url)
+{
+
+  let co2logo = 'assets/img/co2ok-logo.png';
+  let co2logowhite = 'assets/img/co2okwhite.png';
+
+  let confirmButt = `
+
+    <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${browser.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
+
+      <p>SHOP</p>
+      <img src='${browser.extension.getURL(co2logo)}' alt=''>
+
+    </a>
+
+  `;
+
+  return confirmButt
+
+}
+
+
+function thanksBar()
+{
+
+  let gifsArr = ["assets/img/happy-globe.mp4", "assets/img/happy-piggy-loop.mp4", "assets/img/happy-flower.mp4", 'assets/img/cat-high-five.mp4'];
+  let randSrc = Math.floor(Math.random() * gifsArr.length);
+  let thanksBar = `
+
+    <div class='thanksBar'>
+
+      <!--<img src='${browser.extension.getURL("assets/img/happy-flower.gif")}' alt=''>-->
+      <video width='110' height='100' autoplay loop>
+       <source src='${browser.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
+       <source src='${browser.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
+      </video>
+      <p>You are now shopping climate neutral on this website</p>
+
+    </div>
+
+  `;
+
+  return thanksBar;
+
+}
+
+
 /**
  * Return topbar's content based on activation status.
  *
  * @param {boolean} activated Topbar's activation status.
  */
+
 function getContent(activated){
     let content;
 
+    let topbarActivatedInfo = '<p class="topbarActivatedInfo">Start shopping climate neutral on this website by clicking here</p>';
+
+
     if(activated){
-        content = browser.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + browser.i18n.getMessage('topbarActivatedClose') + '</p>';
+      // browser.i18n.getMessage('topbarActivatedInfo') ==> You are now shopping climate neutral on this website
+      //als de klant kies via de confirm page om climate neutral te shoppen wordt deze if statement uitgevoerd
+      //browser.i18n.getMessage('topbarActivatedClose') ==> de topbar wordt over 5 sec gesloten
+
+        //content = browser.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + browser.i18n.getMessage('topbarActivatedClose') + '</p>';
+        content = thanksBar();
     }
     else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = browser.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + browser.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + browser.i18n.getMessage('topbarActivateButton') + '</a>';
+      //content = browser.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm.php?url=' + location.href + '&lang=' + browser.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + browser.i18n.getMessage('topbarActivateButton') + '</a>';
+      content = topbarActivatedInfo + CO2okTopBarButton('confirm.php');
+
     }
     else {
-        content = browser.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + browser.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + browser.i18n.getMessage('topbarActivateButton') + '</a>';
+
+        //content = browser.i18n.getMessage('topbarActivateInfo') + browser.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect.php?url=' + location.href + '&lang=' + browser.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + browser.i18n.getMessage('topbarActivateButton') + '</a>';
+        content = topbarActivatedInfo + CO2okTopBarButton('redirect.php');;
     }
 
     return content;
@@ -276,7 +354,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 6000);
+        }, 5000);
     }
 
     addListeners(activated);
@@ -378,6 +456,7 @@ const ASSETS_PATHS = {
         settings: browser.extension.getURL("assets/img/settings.png"),
         icon: browser.extension.getURL("assets/img/icon.png"),
         icon16: browser.extension.getURL("assets/img/icon16.png"),
+        logo: browser.extension.getURL("assets/img/co2ok-logo-white.png"),
     },
     pages: {
         options: browser.extension.getURL("pages/options.html"),
@@ -386,12 +465,13 @@ const ASSETS_PATHS = {
 /* harmony export (immutable) */ __webpack_exports__["a"] = ASSETS_PATHS;
 
 
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var H = __webpack_require__(12);
-module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"CO2okTopBar\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.cancel",c,p,0)));t.b("\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.icon",c,p,0)));t.b("\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div></div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"CO2okTopBar\"><img src=\"{{ASSETS_PATHS.icons.cancel}}\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"{{ASSETS_PATHS.icons.icon}}\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">{{{content}}}</div></div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
+module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"CO2okTopBar\"><a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.icon",c,p,0)));t.b("\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.cancel",c,p,0)));t.b("\" id=\"CO2okTopBarIcon\"></div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"CO2okTopBar\"><a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"{{ASSETS_PATHS.icons.icon}}\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">{{{content}}}</div><img src=\"{{ASSETS_PATHS.icons.cancel}}\" id=\"CO2okTopBarIcon\"></div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
 
 /***/ }),
 /* 12 */
@@ -1200,12 +1280,12 @@ var Hogan = {};
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(16)(false);
+exports = module.exports = __webpack_require__(16)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "#CO2okTopBarButton,#CO2okTopBarButtonGrey,#CO2okTopBarCTA{display:inline-block;text-align:center;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBar{width:350px!important;max-height:180px!important;min-height:120px!important;border:1px solid #e0e0e0;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}#CO2okTopBarLogoLink{float:left!important}#CO2okTopBarLogo{max-width:20px!important;margin:8px;float:left}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{font-weight:700;margin:7px 0;width:240px;margin-top:20px}#CO2okTopBarButton,#CO2okTopBarCTA{font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;text-transform:uppercase;font-size:14px!important}#CO2okTopBarButton:hover{text-decoration:underline;background-color:#439a46;color:#fff}#CO2okTopBarButtonGrey{border:1px solid #e0e1e2;background:#e0e1e2;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButtonGrey:hover{text-decoration:underline;background-color:#cacbcd;color:#fff}#CO2okSmallText{font-weight:300px;font-size:12px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "#CO2okTopBarButton,#CO2okTopBarButtonGrey,#CO2okTopBarCTA{display:inline-block;text-align:center;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBar{width:350px!important;max-height:180px!important;min-height:120px!important;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start}#CO2okTopBarLogoLink{margin-top:15px}#CO2okTopBarLogo{max-width:100px!important;height:100px;margin:8px;border:1px solid red}#CO2okTopBarIcon{margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{font-weight:700;margin:7px 0;width:80%;height:100px;margin-top:20px;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center}#CO2okTopBarButton,#CO2okTopBarCTA{font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:50px;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;text-transform:uppercase;font-size:14px!important;margin-bottom:10px;padding:10px}#CO2okTopBarButton:hover{transform:scale(1.1);background-color:#439a46;color:#fff}.confirmButt{border:1px solid #4caf50;background:#fff;border-radius:12px;padding:6px 12px;margin-bottom:5px;padding:10px;display:flex;flex-direction:row;justify-content:center;align-items:center;width:80%;height:50px;text-decoration:none}.topbarActivatedInfo{text-align:left;font-size:10px;width:90%;text-align:center}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.confirmButt:hover img,.confirmButtebay:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.confirmButtebay p,.confirmButt p{color:#0cbb4f;font-weight:700!important;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-transform:uppercase;font-size:22px!important;text-align:center;margin-right:7px;text-decoration:none}.confirmButt:hover p{color:#fff}.confirmButtebay img,.confirmButt img{width:80px;height:30px;position:relative;top:5px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{width:auto;height:150px;display:flex;flex-direction:column;justify-content:center;align-items:center}.thanksBar img{width:50px;height:50px}.thanksBar p{text-align:center;width:90%;font-size:13px;color:gray;margin:0;position:relative;bottom:15px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 

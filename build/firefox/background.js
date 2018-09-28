@@ -202,7 +202,7 @@ function onAlarm() {
             case 'clearClosedWebsites' :
                 browser.storage.local.remove(['closedWebsites']);
             break;
-            
+
             case 'clearDisabledWebsites' :
                 browser.storage.local.remove(['disabledWebsites']);
             break;
@@ -213,6 +213,7 @@ function onAlarm() {
         }
     });
 }
+
 
 /***/ }),
 /* 5 */

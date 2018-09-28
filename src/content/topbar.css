@@ -11,6 +11,7 @@
   max-height: 180px !important;
   min-height: 120px !important;
   border: 1px solid #e0e0e0;
+  border-radius: 5px;
   background-color: #fff !important;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -24,20 +25,27 @@
   font-size: 14px;
   color: #959595 !important;
   animation: CO2ok-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #CO2okTopBarLogoLink {
-  float: left !important;
+  /*float: left !important;*/
+  margin-top: 15px;
 }
 
 #CO2okTopBarLogo {
-  max-width: 20px !important;
+  max-width: 100px !important;
+  height: 100px;
   margin: 8px;
-  float: left;
+  border: 1px solid red;
+  /*float: left;*/
 }
 
 #CO2okTopBarIcon {
-  float: right;
+/*  float: right;*/
   margin: 10px;
   cursor: pointer;
   max-width: 10px !important;
@@ -54,15 +62,20 @@
   font-weight: 700;
   margin: 7px 0;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
-  width: 240px;
+  width: 80%;
+  height: 100px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 #CO2okTopBarButton {
   border: 1px solid #4caf50;
   background: #4caf50;
   color: #fff;
-  border-radius: 0;
+  border-radius: 50px;
   padding: 6px 12px;
   text-decoration: none;
   font-weight: 700 !important;
@@ -70,35 +83,178 @@
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
   text-transform: uppercase;
   font-size: 14px !important;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 #CO2okTopBarButton:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  transform: scale(1.1,1.1);
   background-color: #439a46;
   color: #fff;
 }
 
-#CO2okTopBarButtonGrey {
+.confirmButt
+{
+
+  border: 1px solid #4caf50;
+  background: #fff;
+  /*background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);*/
+  border-radius: 12px;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  text-decoration: none;
+
+}
+
+
+.topbarActivatedInfo
+{
+
+   text-align: left;
+   font-size: 10px;
+   width: 90%;
+   text-align: center;
+
+}
+
+/*.confirmButtebay
+{
+
+  border: 1px solid #4caf50;
+  background: #4caf50;
+  background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+  border-radius: 12px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30px;
+  text-decoration: none;
+
+}*/
+
+.confirmButt:hover
+{
+
+  background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+/*  transition: transform 0.2s linear 0s;
+  transform: scale(0.93,0.93);*/
+
+}
+
+.confirmButt:hover img, .confirmButtebay:hover img
+{
+
+  transition: transform 0.2s linear 0s;
+  transform: scale(1.1,1.1);
+
+}
+
+.confirmButt p, .confirmButtebay p
+{
+
+  /* color: #4caf50;*/
+  color: #0cbb4f;
+   text-decoration: none;
+   font-weight: 700 !important;
+   line-height: 1.4285;
+   font-family: Helvetica, Arial, Verdana, sans-serif !important;
+   text-transform: uppercase;
+   font-size: 22px !important;
+   text-align: center;
+   margin-right: 7px;
+   text-decoration: none;
+
+}
+
+.confirmButt:hover p
+{
+
+   color: #fff;
+
+}
+
+.confirmButt img, .confirmButtebay img
+{
+
+   width: 80px;
+   height: 30px;
+   position: relative;
+   top: 5px;
+
+}
+
+/*#CO2okTopBarButtonGrey {
   border: 1px solid #e0e1e2;
   background: #e0e1e2;
   color: #fff;
-  border-radius: 0;
+  border-radius: 50px;
   padding: 6px 12px;
   text-decoration: none;
   font-weight: 700;
   line-height: 1.4285;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 #CO2okTopBarButtonGrey:hover {
   text-decoration: underline;
-  background-color: #cacbcd;
+/*  background-color: #cacbcd;*/
+/* transform: scale(1.1,1.1);
   color: #fff;
-}
+}*/
 
 #CO2okSmallText {
   font-weight: 300px;
   font-size: 12px;
+  text-align: left;
+  color: red;
+}
+
+.thanksBar
+{
+
+  width: auto;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.thanksBar img
+{
+
+   width: 50px;
+   height: 50px;
+}
+
+.thanksBar p
+{
+
+   text-align: center;
+   width: 90%;
+   font-size: 13px;
+   color: gray;
+   margin: 0px;
+   position: relative;
+   bottom: 15px;
+
 }
 
 @-webkit-keyframes CO2ok-slide-in-right {
