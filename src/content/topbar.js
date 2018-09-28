@@ -84,7 +84,7 @@ function CO2okTopBarButton(url)
 
     <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
 
-      <p>SHOP</p>
+      <div class="shopText"><p>Shop</p></div>
       <img src='${chrome.extension.getURL(co2logo)}' alt=''>
 
     </a>
@@ -106,11 +106,11 @@ function thanksBar()
     <div class='thanksBar'>
 
       <!--<img src='${chrome.extension.getURL("assets/img/happy-flower.gif")}' alt=''>-->
-      <video width='110' height='100' autoplay loop>
+      <video width='200' height='102' autoplay loop>
        <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
        <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
       </video>
-      <p>You are now shopping climate neutral on this website</p>
+      <p>You are now shopping climate neutral</p>
 
     </div>
 
@@ -130,7 +130,7 @@ function thanksBar()
 function getContent(activated){
     let content;
 
-    let topbarActivatedInfo = '<p class="topbarActivatedInfo">Start shopping climate neutral on this website by clicking here</p>';
+    let topbarActivatedInfo = `<p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>`;
 
 
     if(activated){
@@ -199,7 +199,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 5000);
+        }, 50000000);
     }
 
     addListeners(activated);
