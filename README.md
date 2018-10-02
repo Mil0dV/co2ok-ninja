@@ -1,4 +1,4 @@
-<p align="center"><img src="https://Co2ok.eco/img/logo-go.jpg" alt="CO2ok logo"></p>
+<p align="center"><img src="https://CO2ok.Ninja/img/logo-go.jpg" alt="CO2ok logo"></p>
 
 <h1>What is CO2ok?</h1>
 
@@ -6,7 +6,7 @@ It's a browser extension that allows users to raise money for charities through 
 
 <h1>Install</h1>
 
-<a href="https://chrome.google.com/webstore/detail/CO2okcom-chrome-exten/jneoemaenmeibociafkflgjkjaopbggc" target="_blank"><img src="https://Co2ok.eco/img/chrome_128x128.png" alt="Chrome logo" height="48" width="48"></a>
+<a href="https://chrome.google.com/webstore/detail/CO2okcom-chrome-exten/jneoemaenmeibociafkflgjkjaopbggc" target="_blank"><img src="https://CO2ok.Ninja/img/chrome_128x128.png" alt="Chrome logo" height="48" width="48"></a>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/CO2ok-com/" target="_blank"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_128x128.png" width="48" height="48"></a>
 
 Install CO2ok from <a href="https://chrome.google.com/webstore/detail/CO2okcom-chrome-exten/jneoemaenmeibociafkflgjkjaopbggc" target="_blank">Chrome Webstore</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/CO2ok-com/" target="_blank">Mozilla Addons</a>
