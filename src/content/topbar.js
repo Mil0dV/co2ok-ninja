@@ -68,7 +68,7 @@ function addListeners(activated){
         co2logo = 'assets/img/co2okwhite.png';
 
      })
-console.log('it work');
+
      newLogo = 'assets/img/co2okwhite.png';
 
  }
@@ -135,6 +135,7 @@ function getContent(activated){
 
 
     if(activated){
+      console.log(activated);
       // chrome.i18n.getMessage('topbarActivatedInfo') ==> You are now shopping climate neutral on this website
       //als de klant kies via de confirm page om climate neutral te shoppen wordt deze if statement uitgevoerd
       //chrome.i18n.getMessage('topbarActivatedClose') ==> de topbar wordt over 5 sec gesloten
@@ -143,12 +144,13 @@ function getContent(activated){
         content = thanksBar();
     }
     else if(DOMAIN.indexOf('ebay') !== -1) {
+    console.log(`elseif:${activated}`);
       //content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
       content = topbarActivatedInfo + CO2okTopBarButton('confirm.php');
 
     }
     else {
-
+console.log(`else:${activated}`);
         //content = chrome.i18n.getMessage('topbarActivateInfo') + chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
         content = topbarActivatedInfo + CO2okTopBarButton('redirect.php');;
     }
@@ -200,7 +202,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 50000000);
+        }, 5000);
     }
 
     addListeners(activated);
