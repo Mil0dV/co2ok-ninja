@@ -3,34 +3,34 @@
         "message": "CO2ok.Ninja"
     },
     "description": {
-        "message": "Collectez de l’argent pour les œuvres caritatives les plus efficaces du monde grâce à vos achats en ligne quotidiens, sans coûts supplémentaires."
+        "message": "Rendez le climat neutre grace a vos achats(sans frais supplémentaires)"
     },
     "topbarActivateInfo": {
-        "message": "Commencez à collecter de l’argent pour des œuvres caritatives avec ce site Web en cliquant ici : "
+        "message": "Commencez à rendre le climat neutre grace à vos achats sur ce site web"
     },
     "topbarActivateButton": {
-        "message": "Commencez à collecter de l’argent"
+        "message": "Achetez en mode climat neutre"
     },
     "topbarActivatedInfo": {
-        "message": "Vous allez maintenant collecter de l'argent pour des œuvres caritatives avec ce site Web."
+        "message": "Vous etes entrain d'acheter en mode climat neutre"
     },
     "topbarActivatedClose": {
-        "message": "Cette fenêtre se fermera automatiquement dans 5 secondes"
+        "message": "Cette fenêtre se refermera automatiquement dans 5 secondes"
     },
     "optionsTitle": {
         "message": "Paramètres de l’extension CO2ok.Ninja"
     },
     "optionsComingSoon": {
-        "message": "Prochainement !"
+        "message": "Prochainement!"
     },
     "optionsTopbarTitle": {
-        "message": "Informez-moi quand j'ai la possibilité de collecter de l’argent pour des œuvres caritatives grâce à mes achats"
+        "message": "Informez-moi lorsque j'ai la possibilité de faire un achat en climat climat"
     },
     "optionsTopbarDescription": {
-        "message": "Chaque fois que vous irez sur le site Web de nos partenaires, vous verrez une barre en haut d’une page vous donnant la possibilité de collecter de l’argent pour des œuvres caritatives, sur simple pression d’un bouton. Si vous cliquez sur ce bouton, il vous sera demandé de confirmer que vous voulez soutenir CO2ok grâce à vos achats sur le site que vous consultez. Ensuite, une commission se montant généralement de 1 à 6 % de votre achat sera donnée aux œuvres caritatives que nous soutenons."
+        "message": "Chaque fois que vous visitez le site Web de l'un de nos partenaires, vous verrez une bar en haut de la page qui vous donnera la possibilité de faire des achats sans impact sur le climat juste en cliquant sur le bouton. Si vous cliquez sur ce bouton, on vous demandera de confirmer que vous souhaitiez acheter avec CO2ok sur le site que vous consultez. Après cela, nous veillerons à ce que tous les gaz à effet de serre de vos achats soient compensés."
     },
     "optionsSuggestionsTitle": {
-        "message": "Montrez-moi des suggestions pendant que je navigue sur Internet"
+        "message": "Proposez-moi des suggestions pendant que je navigue sur Internet"
     },
     "optionsSuggestionsDescription": {
         "message": "Cette option vous permet de voir une petite boîte contenant des promotions, coupons et produits qui peuvent vous intéresser, d'après le contenu de la page que vous consultez. Elle apparaît de temps en temps dans l’angle inférieur droit de votre navigateur. Chaque fois que vous décidez d’acheter un produit suggéré, l’une des œuvres caritatives les plus efficaces du monde reçoit une partie du bénéfice de la vente (le prix que vous paierez ne changera pas). Nous nous efforçons de rendre l’opération aussi rapide et non intrusive que possible."
@@ -42,6 +42,6 @@
         "message": "Quand vous utilisez un moteur de recherche comme Google, Bing ou DuckDuckGo, les liens menant au site Web de nos partenaires seront mis en évidence afin que vous sachiez immédiatement avec quels sites Web vous pouvez collecter de l’argent."
     },
     "optionsThankYou": {
-        "message": ""
+        "message": "A propos - merci d'être aussi génial et de nous aider à combattre les changements climatique :)"
     }
 }
