@@ -3,7 +3,11 @@
 
   "name": "__MSG_name__",
   "description": "__MSG_description__",
+<<<<<<< HEAD
   "version": "0.1.0",
+=======
+  "version": "0.2.0",
+>>>>>>> 5e5482ddb1ea072353d7b5b5e974ab77e2585120
   "default_locale": "en",
   "options_page": "pages/options.html",
   "browser_action": {

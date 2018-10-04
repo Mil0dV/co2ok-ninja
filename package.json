@@ -1,6 +1,10 @@
 {
   "name": "CO2ok.Ninja",
+<<<<<<< HEAD
   "version": "0.1.0",
+=======
+  "version": "0.2.0",
+>>>>>>> 5e5482ddb1ea072353d7b5b5e974ab77e2585120
   "description": "Browser extension that allows users to shop climate neutral with no extra costs",
   "main": "index.js",
   "scripts": {
