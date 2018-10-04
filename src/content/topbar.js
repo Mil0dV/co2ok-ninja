@@ -56,27 +56,111 @@ function addListeners(activated){
     });
 }
 
+
+function CO2okTopBarButton(url)
+{
+
+  let co2logo = chrome.extension.getURL('assets/img/logo.svg');
+  let co2logowhite = chrome.extension.getURL('assets/img/logo_wit.svg');
+
+  //   <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
+  let confirmButt = `
+
+    <a href=https://CO2ok.Ninja id="CO2okTopBarLogoLink">
+        <img src="${chrome.extension.getURL('assets/img/icon.png')}" id=CO2okTopBarLogo>
+    </a>
+
+    <div id=CO2okTopBarCTA>
+
+      <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        onmouseover="
+
+          let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logowhite}';
+
+        "
+
+        onmouseout="
+
+          let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logo}';
+
+        "
+      >
+
+      <div class="shopText"><p>${chrome.i18n.getMessage('topbarActivateButton')}</p></div>
+        <img src='${co2logo}' alt=''>
+
+      </a>
+
+      <p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
+
+    </div>
+
+    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
+
+  `;
+
+  return confirmButt;
+
+}
+
+
+
+function thanksBar()
+{
+
+//  let gifsArr = ["assets/img/happy-globe.mp4", "assets/img/happy-piggy-loop.mp4", "assets/img/happy-flower.mp4", 'assets/img/cat-high-five.mp4'];
+  let gifsArr = ["assets/img/happy-globe.gif", "assets/img/happy-piggy.gif", "assets/img/happyflower.gif", 'assets/img/cat-high-five.gif'];
+  let randSrc = Math.floor(Math.random() * gifsArr.length);
+  let CO2okTopBarLogoLink = document.getElementById('CO2okTopBarLogoLink');
+  let thanksBar = `
+
+    <div class='thanksBar'>
+
+    <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
+    <!--  <video width='200' height='102' autoplay loop>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
+      </video>-->
+      <p>You are now shopping climate neutral</p>
+
+    </div>
+    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
+
+  `;
+
+  return thanksBar;
+
+}
+
+
 /**
  * Return topbar's content based on activation status.
  *
  * @param {boolean} activated Topbar's activation status.
  */
-function getContent(activated){
-    let content;
 
-    if(activated){
-        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
-    }
-    else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
-    }
-    else {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
-    }
+ function getContent(activated){
 
-    return content;
-}
+     let content;
 
+     if(activated){
+
+         //content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+         content = thanksBar();
+     }
+     else if(DOMAIN.indexOf('ebay') !== -1) {
+       //content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+       content =  CO2okTopBarButton('confirm.php');
+
+     }
+     else {
+
+         //content = chrome.i18n.getMessage('topbarActivateInfo') + chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+         content =  CO2okTopBarButton('redirect.php');
+     }
+
+     return content;
+ }
 /**
  * Load html template and fill it with proper content.
  *
@@ -121,7 +205,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 6000);
+        }, 5000);
     }
 
     addListeners(activated);

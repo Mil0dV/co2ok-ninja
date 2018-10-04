@@ -1,24 +1,24 @@
 {
     "name": {
-        "message": "Co2ok.eco"
+        "message": "CO2ok.Ninja"
     },
     "description": {
-        "message": "Sammeln Sie alleine durch Ihr tägliches Einkaufen – und ohne zusätzliche Kosten – Spenden für einige der weltweit effektivsten Wohltätigkeitsorganisationen."
+        "message": "Mache dein Einkaufen klimaneutral – und ohne zusätzliche Kosten"
     },
     "topbarActivateInfo": {
-        "message": "Klicken Sie hier und beginnen Sie mit dem Spendensammeln: "
+        "message": "Mache dein Einkaufen klimaneutral"
     },
     "topbarActivateButton": {
-        "message": "Spenden für wohltätige Zwecke sammeln"
+        "message": "Klimaneutral einkaufen"
     },
     "topbarActivatedInfo": {
-        "message": "Sie sind nun dabei, mit dieser Webseite Spenden für Wohltätigkeitsorganisationen zu sammeln."
+        "message": "Sie kaufen jetzt klimaneutral ein!"
     },
     "topbarActivatedClose": {
         "message": "Dieses Fenster wird in 5 Sekunden automatisch geschlossen."
     },
     "optionsTitle": {
-        "message": "Co2ok.eco Erweiterung-Einstellungen"
+        "message": "CO2ok.Ninja Erweiterung-Einstellungen"
     },
     "optionsComingSoon": {
         "message": "Demnächst!"

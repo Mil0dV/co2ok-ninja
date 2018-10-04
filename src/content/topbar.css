@@ -1,16 +1,18 @@
-#CO2okTopBarButton,
+/*#CO2okTopBarButton,
 #CO2okTopBarButtonGrey,
 #CO2okTopBarCTA {
   display: inline-block;
   text-align: center;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
-}
+}*/
 
 #CO2okTopBar {
   width: 350px !important;
-  max-height: 180px !important;
-  min-height: 120px !important;
+/*  max-height: 180px !important;
+  min-height: 120px !important;*/
+  height: auto;
   border: 1px solid #e0e0e0;
+  border-radius: 5px;
   background-color: #fff !important;
   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -24,20 +26,29 @@
   font-size: 14px;
   color: #959595 !important;
   animation: CO2ok-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #CO2okTopBarLogoLink {
-  float: left !important;
+  /*float: left !important;*/
+  margin-top: 15px;
 }
 
 #CO2okTopBarLogo {
-  max-width: 20px !important;
-  margin: 8px;
-  float: left;
+  /*float: left;*/
+  max-width: 95px!important;
+  height: 95px;
+  margin: 9px;
+  position: relative;
+  bottom: 4px;
+
 }
 
 #CO2okTopBarIcon {
-  float: right;
+/*  float: right;*/
   margin: 10px;
   cursor: pointer;
   max-width: 10px !important;
@@ -51,18 +62,29 @@
 }
 
 #CO2okTopBarCTA {
-  font-weight: 700;
+/*  font-weight: 700;
   margin: 7px 0;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
-  width: 240px;
+  width: 80%;
+  height: 100px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;*/
+  width: auto;
+  height: auto;
+  width: auto;
+  height: auto;
+  position: relative;
+  left: 8px;
 }
 
 #CO2okTopBarButton {
   border: 1px solid #4caf50;
   background: #4caf50;
   color: #fff;
-  border-radius: 0;
+  border-radius: 40px;
   padding: 6px 12px;
   text-decoration: none;
   font-weight: 700 !important;
@@ -70,35 +92,216 @@
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
   text-transform: uppercase;
   font-size: 14px !important;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 #CO2okTopBarButton:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  transform: scale(1.1,1.1);
   background-color: #439a46;
   color: #fff;
 }
 
-#CO2okTopBarButtonGrey {
+.confirmButt
+{
+
+  border: 2px solid;
+  border-color: #11d073;
+/*  border: 2px solid transparent;*/
+  border-radius: 12px;
+/*  -moz-border-image: -moz-linear-gradient(top, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+  border-image: linear-gradient(to bottom, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+  border-image-slice: 1;*/
+    background: #fff;
+    padding: 6px 12px;
+    margin-bottom: -7px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25px;
+    text-decoration: none;
+    margin-top: 22px;
+
+}
+
+.confirmButt:hover
+{
+
+  background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+/*  transition: transform 0.2s linear 0s;
+  transform: scale(0.93,0.93);*/
+
+}
+
+.topbarActivatedInfo
+{
+
+   text-align: left;
+   font-size: 13px;
+   width: 100%;
+   font-family: Helvetica, Arial, Verdana, sans-serif !important;
+   text-align: center;
+   font-weight: 700;
+   display: flex;
+   flex-direction: column-reverse;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+    right: 9px;
+
+}
+
+/*.confirmButtebay
+{
+
+  border: 1px solid #4caf50;
+  background: #4caf50;
+  background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
+  border-radius: 12px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30px;
+  text-decoration: none;
+
+}*/
+
+.confirmButt:hover img
+{
+
+  transition: transform 0.2s linear 0s;
+  transform: scale(1.1,1.1);
+
+}
+
+.shopText
+{
+
+   width: auto;
+   height: auto;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.confirmButt p
+{
+
+  text-align: center;
+   width: 130%;
+   font-size: 27px;
+   color: #0eca4c;
+   margin: 0;
+   position: relative;
+   bottom: 1px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   right: 7px;
+
+}
+
+.confirmButt:hover p
+{
+
+   color: #fff;
+
+}
+
+.confirmButt img
+{
+
+   width: 80px;
+   height: 30px;
+   position: relative;
+   top: 2px;
+
+}
+
+
+/*#CO2okTopBarButtonGrey {
   border: 1px solid #e0e1e2;
   background: #e0e1e2;
   color: #fff;
-  border-radius: 0;
+  border-radius: 50px;
   padding: 6px 12px;
   text-decoration: none;
   font-weight: 700;
   line-height: 1.4285;
   font-family: Helvetica, Arial, Verdana, sans-serif !important;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 #CO2okTopBarButtonGrey:hover {
   text-decoration: underline;
-  background-color: #cacbcd;
+/*  background-color: #cacbcd;*/
+/* transform: scale(1.1,1.1);
   color: #fff;
-}
+}*/
 
 #CO2okSmallText {
   font-weight: 300px;
   font-size: 12px;
+  text-align: left;
+  color: red;
+}
+
+.thanksBar
+{
+
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.thanksBar img
+{
+
+  width: 100%;
+  height: 200px;
+
+}
+
+thanksBar video
+{
+
+  position: relative;
+  bottom: 3px;
+
+}
+
+.thanksBar p
+{
+
+  text-align: center;
+      width: 130%;
+      font-size: 13px;
+      color: gray;
+      margin: 0;
+      position: relative;
+      bottom: 1px;
+      margin-top: 3px;
+      margin-bottom: -8px;
+      right: -6px;
+
 }
 
 @-webkit-keyframes CO2ok-slide-in-right {

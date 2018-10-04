@@ -211,27 +211,111 @@ function addListeners(activated){
     });
 }
 
+
+function CO2okTopBarButton(url)
+{
+
+  let co2logo = chrome.extension.getURL('assets/img/logo.svg');
+  let co2logowhite = chrome.extension.getURL('assets/img/logo_wit.svg');
+
+  //   <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
+  let confirmButt = `
+
+    <a href=https://CO2ok.Ninja id="CO2okTopBarLogoLink">
+        <img src="${chrome.extension.getURL('assets/img/icon.png')}" id=CO2okTopBarLogo>
+    </a>
+
+    <div id=CO2okTopBarCTA>
+
+      <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        onmouseover="
+
+          let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logowhite}';
+
+        "
+
+        onmouseout="
+
+          let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logo}';
+
+        "
+      >
+
+      <div class="shopText"><p>${chrome.i18n.getMessage('topbarActivateButton')}</p></div>
+        <img src='${co2logo}' alt=''>
+
+      </a>
+
+      <p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
+
+    </div>
+
+    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
+
+  `;
+
+  return confirmButt;
+
+}
+
+
+
+function thanksBar()
+{
+
+//  let gifsArr = ["assets/img/happy-globe.mp4", "assets/img/happy-piggy-loop.mp4", "assets/img/happy-flower.mp4", 'assets/img/cat-high-five.mp4'];
+  let gifsArr = ["assets/img/happy-globe.gif", "assets/img/happy-piggy.gif", "assets/img/happyflower.gif", 'assets/img/cat-high-five.gif'];
+  let randSrc = Math.floor(Math.random() * gifsArr.length);
+  let CO2okTopBarLogoLink = document.getElementById('CO2okTopBarLogoLink');
+  let thanksBar = `
+
+    <div class='thanksBar'>
+
+    <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
+    <!--  <video width='200' height='102' autoplay loop>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
+       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
+      </video>-->
+      <p>You are now shopping climate neutral</p>
+
+    </div>
+    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
+
+  `;
+
+  return thanksBar;
+
+}
+
+
 /**
  * Return topbar's content based on activation status.
  *
  * @param {boolean} activated Topbar's activation status.
  */
-function getContent(activated){
-    let content;
 
-    if(activated){
-        content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
-    }
-    else if(DOMAIN.indexOf('ebay') !== -1) {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
-    }
-    else {
-        content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
-    }
+ function getContent(activated){
 
-    return content;
-}
+     let content;
 
+     if(activated){
+
+         //content = chrome.i18n.getMessage('topbarActivatedInfo') + '<p id="CO2okSmallText">' + chrome.i18n.getMessage('topbarActivatedClose') + '</p>';
+         content = thanksBar();
+     }
+     else if(DOMAIN.indexOf('ebay') !== -1) {
+       //content = chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/confirm.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+       content =  CO2okTopBarButton('confirm.php');
+
+     }
+     else {
+
+         //content = chrome.i18n.getMessage('topbarActivateInfo') + chrome.i18n.getMessage('topbarActivateInfo') + '<a href=http://localhost/CO2ok/redirect.php?url=' + location.href + '&lang=' + chrome.i18n.getUILanguage() + ' id=CO2okTopBarButton>' + chrome.i18n.getMessage('topbarActivateButton') + '</a>';
+         content =  CO2okTopBarButton('redirect.php');
+     }
+
+     return content;
+ }
 /**
  * Load html template and fill it with proper content.
  *
@@ -276,7 +360,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 6000);
+        }, 5000);
     }
 
     addListeners(activated);
@@ -378,6 +462,7 @@ const ASSETS_PATHS = {
         settings: chrome.extension.getURL("assets/img/settings.png"),
         icon: chrome.extension.getURL("assets/img/icon.png"),
         icon16: chrome.extension.getURL("assets/img/icon16.png"),
+        logo: chrome.extension.getURL("assets/img/co2ok-logo-white.png"),
     },
     pages: {
         options: chrome.extension.getURL("pages/options.html"),
@@ -386,12 +471,13 @@ const ASSETS_PATHS = {
 /* harmony export (immutable) */ __webpack_exports__["a"] = ASSETS_PATHS;
 
 
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var H = __webpack_require__(12);
-module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"CO2okTopBar\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.cancel",c,p,0)));t.b("\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"");t.b(t.v(t.d("ASSETS_PATHS.icons.icon",c,p,0)));t.b("\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div></div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"CO2okTopBar\"><img src=\"{{ASSETS_PATHS.icons.cancel}}\" id=\"CO2okTopBarIcon\"> <a href=\"https://Co2ok.eco\" id=\"CO2okTopBarLogoLink\"><img src=\"{{ASSETS_PATHS.icons.icon}}\" id=\"CO2okTopBarLogo\"></a><div id=\"CO2okTopBarCTA\">{{{content}}}</div></div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
+module.exports = function() { var T = new H.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("<div id=\"CO2okTopBar\">");t.b(t.t(t.f("content",c,p,0)));t.b("</div><div style=\"clear:both\"></div>");return t.fl(); },partials: {}, subs: {  }}, "<div id=\"CO2okTopBar\">{{{content}}}</div><div style=\"clear:both\"></div>", H);return T.render.apply(T, arguments); };
 
 /***/ }),
 /* 12 */
@@ -1200,12 +1286,12 @@ var Hogan = {};
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(16)(false);
+exports = module.exports = __webpack_require__(16)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "#CO2okTopBarButton,#CO2okTopBarButtonGrey,#CO2okTopBarCTA{display:inline-block;text-align:center;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBar{width:350px!important;max-height:180px!important;min-height:120px!important;border:1px solid #e0e0e0;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}#CO2okTopBarLogoLink{float:left!important}#CO2okTopBarLogo{max-width:20px!important;margin:8px;float:left}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{font-weight:700;margin:7px 0;width:240px;margin-top:20px}#CO2okTopBarButton,#CO2okTopBarCTA{font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;text-transform:uppercase;font-size:14px!important}#CO2okTopBarButton:hover{text-decoration:underline;background-color:#439a46;color:#fff}#CO2okTopBarButtonGrey{border:1px solid #e0e1e2;background:#e0e1e2;color:#fff;border-radius:0;padding:6px 12px;text-decoration:none;font-weight:700;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important}#CO2okTopBarButtonGrey:hover{text-decoration:underline;background-color:#cacbcd;color:#fff}#CO2okSmallText{font-weight:300px;font-size:12px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "#CO2okTopBar{width:350px!important;height:auto;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start}#CO2okTopBarLogoLink{margin-top:15px}#CO2okTopBarLogo{max-width:95px!important;height:95px;margin:9px;position:relative;bottom:4px}#CO2okTopBarIcon{margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{width:auto;height:auto;position:relative;left:8px}#CO2okTopBarButton{border:1px solid #4caf50;background:#4caf50;color:#fff;border-radius:40px;padding:6px 12px;text-decoration:none;font-weight:700!important;line-height:1.4285;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-transform:uppercase;font-size:14px!important;margin-bottom:10px;padding:10px}#CO2okTopBarButton:hover{transform:scale(1.1);background-color:#439a46;color:#fff}.confirmButt{border:2px solid;border-color:#11d073;border-radius:12px;background:#fff;padding:6px 12px;margin-bottom:-7px;padding:10px;display:flex;flex-direction:row;justify-content:center;align-items:center;width:80%;height:25px;text-decoration:none;margin-top:22px}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.topbarActivatedInfo{text-align:left;font-size:13px;width:100%;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center;font-weight:700;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center;position:relative;right:9px}.confirmButt:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.shopText{width:auto;height:auto;display:flex;flex-direction:row;justify-content:center;align-items:center}.confirmButt p{text-align:center;width:130%;font-size:27px;color:#0eca4c;margin:0;position:relative;bottom:1px;margin-top:5px;margin-bottom:5px;right:7px}.confirmButt:hover p{color:#fff}.confirmButt img{width:80px;height:30px;position:relative;top:2px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{width:100%;height:auto;padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center}.thanksBar img{width:100%;height:200px}thanksBar video{position:relative;bottom:3px}.thanksBar p{text-align:center;width:130%;font-size:13px;color:gray;margin:0;position:relative;bottom:1px;margin-top:3px;margin-bottom:-8px;right:-6px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 

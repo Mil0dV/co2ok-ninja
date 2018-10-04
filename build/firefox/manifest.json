@@ -3,7 +3,7 @@
 
   "name": "__MSG_name__",
   "description": "__MSG_description__",
-  "version": "2.1.7",
+  "version": "0.1.0",
   "default_locale": "en",
   "options_ui": {
     "page": "pages/options.html"
@@ -28,7 +28,7 @@
   ],
   "applications": {
     "gecko": {
-      "id": "CO2ok@Co2ok.eco"
+      "id": "CO2ok@CO2ok.Ninja"
     }
   },
   "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ]

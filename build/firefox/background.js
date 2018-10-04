@@ -122,7 +122,7 @@ function extractDomain(url) {
  */
 function getPartnersList(){
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://altruisto.com/api/partners");
+    xhr.open("GET", "https://co2ok.ninja/api/partners");
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4){
             if(xhr.responseText){
@@ -182,7 +182,7 @@ function onInstalled() {
 
         //open welcome page for new installs
         if(details.reason == "install"){
-            browser.tabs.create({url: "https://Co2ok.eco/welcome/"});
+            browser.tabs.create({url: "https://co2ok.ninja/welcome/"});
         }
     });
 }
@@ -202,7 +202,7 @@ function onAlarm() {
             case 'clearClosedWebsites' :
                 browser.storage.local.remove(['closedWebsites']);
             break;
-            
+
             case 'clearDisabledWebsites' :
                 browser.storage.local.remove(['disabledWebsites']);
             break;
@@ -214,6 +214,7 @@ function onAlarm() {
     });
 }
 
+
 /***/ }),
 /* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -224,7 +225,7 @@ function onAlarm() {
 
 
  /**
- * When user requests an Co2ok.eco redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
+ * When user requests an CO2ok.Ninja redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
  */ 
 function activateMonetizing() {
     browser.webRequest.onBeforeRequest.addListener(function(details){ //byc moze onCompleteRedirect - zalezy ktorym latwiej znalezc od pierwszego do ostatniego redirecta
@@ -233,8 +234,8 @@ function activateMonetizing() {
 
         var data = {domain: redirectDomain, timestamp: details.timeStamp}
         updateActivatedAffiliates(data);
-    // }, {urls: ["https://Co2ok.eco/redirect*"], types: ["main_frame"]}); 
-    }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
+    }, {urls: ["http://co2ok.ninja/dojo/redirect*"], types: ["main_frame"]}); 
+    // }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
 }
 
  /**
