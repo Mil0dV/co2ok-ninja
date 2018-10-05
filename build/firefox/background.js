@@ -135,6 +135,7 @@ function getPartnersList(){
     xhr.send();
 }
 
+
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {

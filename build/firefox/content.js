@@ -228,6 +228,7 @@ function CO2okTopBarButton(url)
     <div id=CO2okTopBarCTA>
 
       <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${browser.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+
         onmouseover="
 
           let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logowhite}';
@@ -241,7 +242,7 @@ function CO2okTopBarButton(url)
         "
       >
 
-      <div class="shopText"><p>${browser.i18n.getMessage('topbarActivateButton')}</p></div>
+        <div class="shopText"><p>${browser.i18n.getMessage('topbarActivateButton')}</p></div>
         <img src='${co2logo}' alt=''>
 
       </a>
@@ -257,7 +258,6 @@ function CO2okTopBarButton(url)
   return confirmButt;
 
 }
-
 
 
 function thanksBar()
@@ -294,7 +294,7 @@ function thanksBar()
  * @param {boolean} activated Topbar's activation status.
  */
 
- function getContent(activated){
+function getContent(activated){
 
      let content;
 
