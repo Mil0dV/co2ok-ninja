@@ -1,4 +1,4 @@
-<p align="center"><img src="http://co2ok.ninja/wp-content/uploads/2018/05/co2ok-logo-300x127-1.png" alt="CO2ok logo"></p>
+<p align="center"><img src="http://co2ok.eco/wp-content/uploads/2018/10/Logo-donkerder-uitgelijndlogo.png" alt="CO2ok logo"></p>
 
 <h1>What is CO2ok?</h1>
 
