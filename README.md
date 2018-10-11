@@ -34,3 +34,7 @@ Edit the files in ./src directory
 ```bash
 $ npm run build
 ```
+
+<h2>Special Thanks</h2>
+
+We would like to thank Altruisto for putting their code open source so we could fork our own project based on their previous work. <a href="https://altruisto.com/">Altruisto</a> does a great job at donating to charities through online shoppings. Their GitHub repo can be found here: <a href="https://github.com/Altruisto/altruisto">Altruisto GitHub repository</a>
