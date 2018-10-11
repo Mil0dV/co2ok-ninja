@@ -9,11 +9,7 @@
         "message": "Commencez à rendre le climat neutre grace à vos achats sur ce site web"
     },
     "topbarActivateButton": {
-<<<<<<< HEAD
         "message": "Achetez"
-=======
-        "message": "Achetez en mode climat neutre"
->>>>>>> 5e5482ddb1ea072353d7b5b5e974ab77e2585120
     },
     "topbarActivatedInfo": {
         "message": "Vous etes entrain d'acheter en mode climat neutre"
