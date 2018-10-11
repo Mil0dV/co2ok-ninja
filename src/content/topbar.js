@@ -89,12 +89,12 @@ function CO2okTopBarButton(url)
           "
         >
 
-          <div class="shopText"><p>${chrome.i18n.getMessage('topbarActivateButton')}</p></div>
+          <div class="shopText">${chrome.i18n.getMessage('topbarActivateButton')}</div>
           <img src='${co2logo}' alt=''>
 
         </a>
 
-        <p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
+        <div class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</div>
 
       </div>
 
@@ -125,7 +125,7 @@ function thanksBar()
        <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
        <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
       </video>-->
-      <p>You are now shopping climate neutral</p>
+      You are now shopping climate neutral
 
     </div>
     <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
