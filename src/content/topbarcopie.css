@@ -1,0 +1,63 @@
+#CO2okTopBar
+{
+
+   width: 350px;
+   height: auto;
+   /*display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;*/
+   border: 1px solid #e0e0e0;
+   border-radius: 5px;
+   background-color: #fff !important;
+   box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+   position: fixed;
+   top: 35px;
+   right: 35px;
+   z-index: 99999999999999999;
+   box-sizing: border-box;
+
+}
+
+.logoButtCont
+{
+
+   width: 90%;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-top: 10px;
+   float: left;
+
+}
+
+
+@-webkit-keyframes CO2ok-slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes CO2ok-slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

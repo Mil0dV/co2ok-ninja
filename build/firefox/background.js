@@ -122,7 +122,7 @@ function extractDomain(url) {
  */
 function getPartnersList(){
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://co2ok.ninja/api/partners");
+    xhr.open("GET", "https://co2ok.ninja/dojo/partners");
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4){
             if(xhr.responseText){
