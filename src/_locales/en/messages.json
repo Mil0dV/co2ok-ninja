@@ -12,11 +12,7 @@
         "message": "Shop"
     },
     "topbarActivatedInfo": {
-<<<<<<< HEAD
-        "message": "You are now shopping climate neutral"
-=======
         "message": "You are now shopping climate neutral!"
->>>>>>> 5e5482ddb1ea072353d7b5b5e974ab77e2585120
     },
     "topbarActivatedClose": {
         "message": "This window will be automatically closed in 5 seconds"

@@ -26,29 +26,44 @@
   font-size: 14px;
   color: #959595 !important;
   animation: CO2ok-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+
+}
+
+.logoButtCont
+{
+
+   width: 90%;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-top: 10px;
+   float: left;
+
 }
 
 #CO2okTopBarLogoLink {
-  /*float: left !important;*/
-  margin-top: 15px;
+  float: left !important;
+/*  margin-top: 15px;*/
+  max-width: 95px!important;
+  width: 95px;
+  height: 95px;
+  margin: 9px;
+/*  position: relative;
+  bottom: 4px;*/
+
 }
 
 #CO2okTopBarLogo {
-  /*float: left;*/
-  max-width: 95px!important;
-  height: 95px;
-  margin: 9px;
-  position: relative;
-  bottom: 4px;
+  float: left;
+  max-width: 95px;;
+  height: 100%;
 
 }
 
 #CO2okTopBarIcon {
-/*  float: right;*/
+  float: right;
   margin: 10px;
   cursor: pointer;
   max-width: 10px !important;
@@ -73,14 +88,15 @@
   justify-content: center;
   align-items: center;*/
   width: auto;
-  height: auto;
-  width: auto;
-  height: auto;
-  position: relative;
-  left: 8px;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
-#CO2okTopBarButton {
+/*#CO2okTopBarButton {
   border: 1px solid #4caf50;
   background: #4caf50;
   color: #fff;
@@ -98,34 +114,44 @@
 
 #CO2okTopBarButton:hover {
   /*text-decoration: underline;*/
-  transform: scale(1.1,1.1);
+/*  transform: scale(1.1,1.1);
   background-color: #439a46;
   color: #fff;
-}
+}*/
 
 .confirmButt
 {
 
-  border: 2px solid;
+/*  border: 2px solid;
   border-color: #11d073;
-/*  border: 2px solid transparent;*/
   border-radius: 12px;
-/*  -moz-border-image: -moz-linear-gradient(top, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
-  -webkit-border-image: -webkit-linear-gradient(top, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
-  border-image: linear-gradient(to bottom, #1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
-  border-image-slice: 1;*/
     background: #fff;
-    padding: 6px 12px;
-    margin-bottom: -7px;
-    padding: 10px;
+    /*padding: 6px 12px;*/
+    /*margin-bottom: -7px;*/
+    /*padding: 10px 0px 10px 0px;*/
+  /*  padding-right: 10px;
+    padding-left: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 25px;
+    width: 90%;
+    height: 40px;
     text-decoration: none;
-    margin-top: 22px;
+  /*  margin-top: 22px;*/
+
+      border: 2px solid;
+    border-color: #11d073;
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    box-sizing: border-box;
 
 }
 
@@ -151,30 +177,10 @@
    flex-direction: column-reverse;
    justify-content: center;
    align-items: center;
-   position: relative;
-    right: 9px;
+   /*position: relative;
+    right: 9px;*/
 
 }
-
-/*.confirmButtebay
-{
-
-  border: 1px solid #4caf50;
-  background: #4caf50;
-  background: linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139 100%);
-  border-radius: 12px;
-  padding: 6px 12px;
-  margin-bottom: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 30px;
-  text-decoration: none;
-
-}*/
 
 .confirmButt:hover img
 {
@@ -193,26 +199,26 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
+   margin: 0;
+   position: relative;
+   bottom: 1px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   right: 3px;
 
 }
 
-.confirmButt p
+.confirmButt div
 {
 
   text-align: center;
    width: 130%;
    font-size: 27px;
    color: #0eca4c;
-   margin: 0;
-   position: relative;
-   bottom: 1px;
-   margin-top: 5px;
-   margin-bottom: 5px;
-   right: 7px;
 
 }
 
-.confirmButt:hover p
+.confirmButt:hover div
 {
 
    color: #fff;
@@ -226,7 +232,7 @@
    height: 30px;
    position: relative;
    top: 2px;
-
+   right: 12px;
 }
 
 
@@ -288,7 +294,7 @@ thanksBar video
 
 }
 
-.thanksBar p
+.thanksBar div
 {
 
   text-align: center;
