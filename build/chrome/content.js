@@ -221,7 +221,7 @@ function CO2okTopBarButton(url)
   //   <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
   let confirmButt = `
 
-    <div class="logoButtCont">
+  <!--  <div class="logoButtCont">-->
 
       <a href=https://CO2ok.Ninja id="CO2okTopBarLogoLink">
           <img src="${chrome.extension.getURL('assets/img/icon.png')}" id=CO2okTopBarLogo>
@@ -229,7 +229,7 @@ function CO2okTopBarButton(url)
 
       <div id=CO2okTopBarCTA>
 
-        <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' id="AltruistoTopBarButton" style='text-decoration: none;'
 
           onmouseover="
 
@@ -244,16 +244,16 @@ function CO2okTopBarButton(url)
           "
         >
 
-          <div class="shopText"><p>${chrome.i18n.getMessage('topbarActivateButton')}</p></div>
+          <!--<div class="shopText">--><p>${chrome.i18n.getMessage('topbarActivateButton')}</p><!--</div>-->
           <img src='${co2logo}' alt=''>
 
         </a>
 
-        <p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
+        <p class="topbarActivatedInfo" id="Co2okSmallText">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
 
       </div>
 
-    </div>
+  <!--  </div>-->
 
     <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
 
@@ -1295,7 +1295,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "#CO2okTopBar{width:350px!important;height:auto;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}.logoButtCont{width:90%;height:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;margin-top:10px;float:left}#CO2okTopBarLogoLink{float:left!important;max-width:95px!important;width:95px;height:95px;margin:9px}#CO2okTopBarLogo{float:left;max-width:95px;height:100%}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{width:auto;height:95px;flex-direction:column;justify-content:space-between}#CO2okTopBarCTA,.confirmButt{display:flex;align-items:center}.confirmButt{border:2px solid;border-color:#11d073;border-radius:12px;background:#fff;padding:10px 0;flex-direction:row;justify-content:center;width:90%;height:40px}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.topbarActivatedInfo{text-align:left;font-size:13px;width:100%;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center;font-weight:700;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center}.confirmButt:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.shopText{width:auto;height:auto;display:flex;flex-direction:row;justify-content:center;align-items:center;margin:0;position:relative;bottom:1px;margin-top:5px;margin-bottom:5px;right:7px}.confirmButt p{text-align:center;width:130%;font-size:27px;color:#0eca4c}.confirmButt:hover p{color:#fff}.confirmButt img{width:80px;height:30px;position:relative;top:2px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{width:100%;height:auto;padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center}.thanksBar img{width:100%;height:200px}thanksBar video{position:relative;bottom:3px}.thanksBar p{text-align:center;width:130%;font-size:13px;color:gray;margin:0;position:relative;bottom:1px;margin-top:3px;margin-bottom:-8px;right:-6px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "#CO2okTopBar{width:350px!important;height:auto;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}.logoButtCont{width:90%;height:100%;margin-top:10px;float:left}#CO2okTopBarLogoLink{float:left!important;max-width:95px!important;width:95px;height:95px;margin:9px}#CO2okTopBarLogo{float:left;max-width:95px;height:100%}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{width:auto;height:95px;flex-direction:column;justify-content:space-between}#CO2okTopBarCTA,.confirmButt{display:flex;align-items:center}.confirmButt{border:2px solid;border-color:#11d073;border-radius:12px;background:#fff;padding:10px 0;flex-direction:row;justify-content:center;width:90%;height:40px}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.topbarActivatedInfo{text-align:left;font-size:13px;width:100%;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center;font-weight:700;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center}.confirmButt:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.shopText{width:auto;height:auto;display:flex;flex-direction:row;justify-content:center;align-items:center;margin:0;position:relative;bottom:1px;margin-top:5px;margin-bottom:5px;right:7px}.confirmButt p{text-align:center;width:130%;font-size:27px;color:#0eca4c}.confirmButt:hover p{color:#fff}.confirmButt img{width:80px;height:30px;position:relative;top:2px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{width:100%;height:auto;padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center}.thanksBar img{width:100%;height:200px}thanksBar video{position:relative;bottom:3px}.thanksBar p{text-align:center;width:130%;font-size:13px;color:gray;margin:0;position:relative;bottom:1px;margin-top:3px;margin-bottom:-8px;right:-6px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 

@@ -66,7 +66,7 @@ function CO2okTopBarButton(url)
   //   <a href='http://localhost/CO2ok/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'>
   let confirmButt = `
 
-    <div class="logoButtCont">
+  <!--  <div class="logoButtCont">-->
 
       <a href=https://CO2ok.Ninja id="CO2okTopBarLogoLink">
           <img src="${chrome.extension.getURL('assets/img/icon.png')}" id=CO2okTopBarLogo>
@@ -74,7 +74,7 @@ function CO2okTopBarButton(url)
 
       <div id=CO2okTopBarCTA>
 
-        <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' id="AltruistoTopBarButton" style='text-decoration: none;'
 
           onmouseover="
 
@@ -89,16 +89,16 @@ function CO2okTopBarButton(url)
           "
         >
 
-          <div class="shopText"><p>${chrome.i18n.getMessage('topbarActivateButton')}</p></div>
+          <!--<div class="shopText">--><p>${chrome.i18n.getMessage('topbarActivateButton')}</p><!--</div>-->
           <img src='${co2logo}' alt=''>
 
         </a>
 
-        <p class="topbarActivatedInfo">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
+        <p class="topbarActivatedInfo" id="Co2okSmallText">${chrome.i18n.getMessage('topbarActivateInfo')}</p>
 
       </div>
 
-    </div>
+  <!--  </div>-->
 
     <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
 
