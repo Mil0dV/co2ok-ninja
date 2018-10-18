@@ -267,13 +267,14 @@
 .thanksBar
 {
 
-  width: 100%;
+  /*width: 100%;
   height: auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
+  padding-bottom: 3px;
 
 }
 
@@ -281,20 +282,13 @@
 .thanksBar img
 {
 
-  width: 100%;
+  width: 98%;
   height: 200px;
 
 }
 
-thanksBar video
-{
 
-  position: relative;
-  bottom: 3px;
-
-}
-
-.thanksBar div
+/*.thanksBar div
 {
 
   text-align: center;
@@ -308,7 +302,7 @@ thanksBar video
       margin-bottom: -8px;
       right: -6px;
 
-}
+}*/
 
 @-webkit-keyframes CO2ok-slide-in-right {
   0% {

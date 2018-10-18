@@ -118,6 +118,7 @@ function thanksBar()
   let CO2okTopBarLogoLink = document.getElementById('CO2okTopBarLogoLink');
   let thanksBar = `
 
+    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
     <div class='thanksBar'>
 
     <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
@@ -128,7 +129,6 @@ function thanksBar()
       You are now shopping climate neutral
 
     </div>
-    <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
 
   `;
 
