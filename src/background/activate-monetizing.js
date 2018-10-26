@@ -2,7 +2,7 @@ import { extractDomain } from '../helpers/extract-domain.js';
 
  /**
  * When user requests an CO2ok.Ninja redirect - add redirect URL's domain to activatedAffiliates list (so that content.js knows that this particular domain is already being monetized)
- */ 
+ */
 export function activateMonetizing() {
     chrome.webRequest.onBeforeRequest.addListener(function(details){ //byc moze onCompleteRedirect - zalezy ktorym latwiej znalezc od pierwszego do ostatniego redirecta
         var redirectUrlParts = details.url.split("?url="),
@@ -10,12 +10,12 @@ export function activateMonetizing() {
 
         var data = {domain: redirectDomain, timestamp: details.timeStamp}
         updateActivatedAffiliates(data);
-    }, {urls: ["http://co2ok.ninja/dojo/redirect*"], types: ["main_frame"]}); 
-    // }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]}); 
+    }, {urls: ["https://co2ok.ninja/dojo/redirect*"], types: ["main_frame"]}); 
+    // }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]});
 }
 
  /**
- * Save an affiliate's domain to the locally stored list of websites that the user has activated AKA started raising money from them 
+ * Save an affiliate's domain to the locally stored list of websites that the user has activated AKA started raising money from them
  *
  * @param {object} data New data to be pushed into the list containing domain and current timestamp.
  */
@@ -29,7 +29,7 @@ function updateActivatedAffiliates(data) {
 
     chrome.storage.local.get('activatedAffiliates', function(items) {
         if(items.activatedAffiliates != null){
-            
+
             newData = items.activatedAffiliates;
 
             for(i = 0; i < newData.length; i++){
