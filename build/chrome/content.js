@@ -242,6 +242,7 @@ function CO2okTopBarButton(url)
             let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logo}';
 
           "
+
         >
 
           <div class="shopText">${chrome.i18n.getMessage('topbarActivateButton')}</div>
@@ -264,6 +265,24 @@ function CO2okTopBarButton(url)
 }
 
 
+function confirmButtClicked()
+{
+
+   let confirmButt = document.querySelector('.confirmButt');
+   let count = 0;
+   confirmButt.addEventListener('click', function(){
+
+     count++;
+     let locastorage = window.localStorage.setItem('count', count);
+     window.localStorage.getItem('count');
+     console.log(locastorage);
+
+   })
+
+}
+//confirmButtClicked();
+
+
 function thanksBar()
 {
 
@@ -277,17 +296,54 @@ function thanksBar()
     <div class='thanksBar'>
 
     <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
-    <!--  <video width='200' height='102' autoplay loop>
-       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
-       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
-      </video>-->
-      You are now shopping climate neutral
+
+    ${sharedIcons()}
+
 
     </div>
 
   `;
 
   return thanksBar;
+
+}
+
+
+function sharedIcons()
+{
+
+   let icons = `
+
+     <div class="sharedMediaContainer">
+
+        <div class="sharedText">${chrome.i18n.getMessage('shareMsg')}</div>
+
+        <div class="sharedMedia">
+
+          <a href="https://www.facebook.com/CO2ok/" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
+          <a href="https://twitter.com/CO2ok_eco" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+
+        </div>
+
+     </div>
+
+   `;
+
+   var date = new Date();
+   var sec = date.getSeconds();
+
+
+
+    if(sec % 5 == 0)
+    {
+
+       return icons;
+
+    }else{
+
+      return chrome.i18n.getMessage('topbarActivatedInfo');
+
+    }
 
 }
 
@@ -1290,12 +1346,12 @@ var Hogan = {};
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(16)(undefined);
+exports = module.exports = __webpack_require__(16)(false);
 // imports
 
 
 // module
-exports.push([module.i, "#CO2okTopBar{width:350px!important;height:auto;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}.logoButtCont{width:90%;height:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;margin-top:10px;float:left}#CO2okTopBarLogoLink{float:left!important;max-width:95px!important;width:95px;height:95px;margin:9px}#CO2okTopBarLogo{float:left;max-width:95px;height:100%}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{width:auto;height:95px;flex-direction:column;justify-content:space-between}#CO2okTopBarCTA,.confirmButt{display:flex;align-items:center}.confirmButt{border:2px solid;border-color:#11d073;border-radius:12px;background:#fff;padding:10px 0;flex-direction:row;justify-content:center;width:90%;height:50px;box-sizing:border-box}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.topbarActivatedInfo{text-align:left;font-size:13px;width:100%;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center;font-weight:700;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center}.confirmButt:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.shopText{width:auto;height:auto;display:flex;flex-direction:row;justify-content:center;align-items:center;margin:0;position:relative;bottom:1px;margin-top:5px;margin-bottom:5px;right:3px}.confirmButt div{text-align:center;width:130%;font-size:27px;color:#0eca4c}.confirmButt:hover div{color:#fff}.confirmButt img{width:80px;height:30px;position:relative;top:2px;right:12px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{padding-bottom:3px}.thanksBar img{width:98%;height:200px}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "#CO2okTopBar{width:350px!important;height:auto;border:1px solid #e0e0e0;border-radius:5px;background-color:#fff!important;box-shadow:2px 2px 20px 2px rgba(0,0,0,.3);position:fixed;top:35px;right:35px;z-index:100000000000000000;box-sizing:border-box;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center!important;line-height:1.4285;font-size:14px;color:#959595!important;animation:CO2ok-slide-in-right .5s cubic-bezier(.25,.46,.45,.94) 0s 1 normal both}.logoButtCont{width:90%;height:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;margin-top:10px;float:left}#CO2okTopBarLogoLink{float:left!important;max-width:95px!important;width:95px;height:95px;margin:9px}#CO2okTopBarLogo{float:left;max-width:95px;height:100%}#CO2okTopBarIcon{float:right;margin:10px;cursor:pointer;max-width:10px!important}#CO2okTopBarWelcome{font-size:12px;width:30%;float:left;margin:9px 0 0}#CO2okTopBarCTA{width:auto;height:95px;flex-direction:column;justify-content:space-between}#CO2okTopBarCTA,.confirmButt{display:flex;align-items:center}.confirmButt{border:2px solid;border-color:#11d073;border-radius:12px;background:#fff;padding:10px 0;flex-direction:row;justify-content:center;width:90%;height:50px;box-sizing:border-box}.confirmButt:hover{background:linear-gradient(#1defac 10.09%,#11d071 51.05%,#10cc6b 56.81%,#05b139)}.topbarActivatedInfo{text-align:left;font-size:13px;width:100%;font-family:Helvetica,Arial,Verdana,sans-serif!important;text-align:center;font-weight:700;display:flex;flex-direction:column-reverse;justify-content:center;align-items:center}.confirmButt:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}.shopText{width:auto;height:auto;display:flex;flex-direction:row;justify-content:center;align-items:center;margin:0;position:relative;bottom:1px;margin-top:5px;margin-bottom:5px;right:3px}.confirmButt div{text-align:center;width:130%;font-size:27px;color:#606468}.confirmButt:hover div{color:#fff}.confirmButt img{width:80px;height:30px;position:relative;top:2px;right:12px}#CO2okSmallText{font-weight:300px;font-size:12px;text-align:left;color:red}.thanksBar{padding-bottom:3px}.thanksBar img{width:98%;height:200px}.thanksBar .sharedMedia{width:auto;height:auto;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;margin-bottom:5px}.thanksBar .sharedMediaContainer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:auto}.thanksBar .sharedMediaContainer .sharedText{width:90%;height:auto;text-align:center;font-size:13px;margin-bottom:6px;margin-top:2px}.thanksBar .sharedMedia a{width:auto;height:auto;text-decoration:none;margin-left:5px;margin-right:5px;display:flex;flex-direction:row;justify-content:center;align-items:center}.thanksBar .sharedMedia a img{width:30px;height:30px}.thanksBar .sharedMedia a span{width:auto;height:auto;font-size:12px;text-align:center;font-weight:bolder}.thanksBar .sharedMedia a:hover img{transition:transform .2s linear 0s;transform:scale(1.1)}@-webkit-keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes CO2ok-slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}to{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 

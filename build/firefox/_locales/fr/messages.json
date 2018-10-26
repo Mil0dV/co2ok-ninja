@@ -43,5 +43,8 @@
     },
     "optionsThankYou": {
         "message": "A propos - merci d'être aussi génial et de nous aider à combattre les changements climatique :)"
+    },
+    "shareMsg":{
+      "message": "Aidez-nous à atteindre plus de personnes qui propageront le mot.</br>Combattons le changement climatique ensemble!"
     }
 }
