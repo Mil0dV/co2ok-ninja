@@ -297,13 +297,8 @@ function thanksBar()
 
     <img src='${browser.extension.getURL(gifsArr[randSrc])}' alt=''>
 
-      <div class="sharedMediaContainer">
+    ${sharedIcons()}
 
-       <div class="sharedText">${browser.i18n.getMessage('shareMsg')}</div>
-
-        ${sharedIcons()}
-
-      </div>
 
     </div>
 
@@ -319,10 +314,16 @@ function sharedIcons()
 
    let icons = `
 
-     <div class="sharedMedia">
+     <div class="sharedMediaContainer">
 
-       <a href="https://www.facebook.com/CO2ok/" target="_blank" class="facebook"><img src="${browser.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
-       <a href="https://twitter.com/CO2ok_eco" target="_blank" class="twitter"><img src="${browser.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+        <div class="sharedText">${browser.i18n.getMessage('shareMsg')}</div>
+
+        <div class="sharedMedia">
+
+          <a href="https://www.facebook.com/CO2ok/" target="_blank" class="facebook"><img src="${browser.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
+          <a href="https://twitter.com/CO2ok_eco" target="_blank" class="twitter"><img src="${browser.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+
+        </div>
 
      </div>
 
@@ -340,7 +341,7 @@ function sharedIcons()
 
     }else{
 
-      return '';
+      return browser.i18n.getMessage('topbarActivatedInfo');
 
     }
 
