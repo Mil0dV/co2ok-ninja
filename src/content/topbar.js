@@ -87,6 +87,7 @@ function CO2okTopBarButton(url)
             let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logo}';
 
           "
+
         >
 
           <div class="shopText">${chrome.i18n.getMessage('topbarActivateButton')}</div>
@@ -109,6 +110,24 @@ function CO2okTopBarButton(url)
 }
 
 
+function confirmButtClicked()
+{
+
+   let confirmButt = document.querySelector('.confirmButt');
+   let count = 0;
+   confirmButt.addEventListener('click', function(){
+
+     count++;
+     let locastorage = window.localStorage.setItem('count', count);
+     window.localStorage.getItem('count');
+     console.log(locastorage);
+
+   })
+
+}
+//confirmButtClicked();
+
+
 function thanksBar()
 {
 
@@ -122,17 +141,53 @@ function thanksBar()
     <div class='thanksBar'>
 
     <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
-    <!--  <video width='200' height='102' autoplay loop>
-       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/mp4'>
-       <source src='${chrome.extension.getURL(gifsArr[randSrc])}' type='video/ogg'>
-      </video>-->
-      You are now shopping climate neutral
+
+      <div class="sharedMediaContainer">
+
+       <div class="sharedText">${chrome.i18n.getMessage('shareMsg')}</div>
+
+        ${sharedIcons()}
+
+      </div>
 
     </div>
 
   `;
 
   return thanksBar;
+
+}
+
+
+function sharedIcons()
+{
+
+   let icons = `
+
+     <div class="sharedMedia">
+
+       <a href="https://www.facebook.com/CO2ok/" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
+       <a href="https://twitter.com/CO2ok_eco" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+
+     </div>
+
+   `;
+
+   var date = new Date();
+   var sec = date.getSeconds();
+
+
+
+    if(sec % 5 == 0)
+    {
+
+       return icons;
+
+    }else{
+
+      return '';
+
+    }
 
 }
 
@@ -209,7 +264,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 5000);
+        }, 7000000);
     }
 
     addListeners(activated);

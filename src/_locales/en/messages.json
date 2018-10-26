@@ -43,5 +43,9 @@
     },
     "optionsThankYou": {
         "message": "By the way - thanks for being awesome and helping us fight climate change :) Cheers! "
+    },
+    "shareMsg":
+    {
+    "message": "  Help us reach more people who will spread the word.</br>Let's fight climate change together!"
     }
 }
