@@ -264,7 +264,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 7000000);
+        }, 5000);
     }
 
     addListeners(activated);
