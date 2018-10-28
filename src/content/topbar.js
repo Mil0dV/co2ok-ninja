@@ -74,7 +74,7 @@ function CO2okTopBarButton(url)
 
       <div id=CO2okTopBarCTA>
 
-        <a href='http://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        <a href='https://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
 
           onmouseover="
 
@@ -165,8 +165,8 @@ function sharedIcons()
 
         <div class="sharedMedia">
 
-          <a href="https://www.facebook.com/CO2ok/" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
-          <a href="https://twitter.com/CO2ok_eco" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+          <a href="https://www.facebook.com/sharer?u=https%3A%2F%2Fco2ok.eco%2Fen%2Fninja%2F" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
+          <a href="https://twitter.com/intent/tweet?text=Install%20a%20browser%20extension%20and%20when%20you%20purchase%20stuff%20online%2C%20you%20help%20fight%20against%20climate%20change!%20Check%20out%3A%20http%3A%2F%2Fco2ok.eco%2Fen%2Fninja%2F" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
 
         </div>
 
@@ -179,7 +179,8 @@ function sharedIcons()
 
 
 
-    if(sec % 5 == 0)
+    if(sec % 4 == 0)
+    // 4 chosen by fair dice roll; guaranteed to be random.
     {
 
        return icons;
