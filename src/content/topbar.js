@@ -74,7 +74,7 @@ function CO2okTopBarButton(url)
 
       <div id=CO2okTopBarCTA>
 
-        <a href='https://co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
+        <a href='https://api.co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
 
           onmouseover="
 
@@ -266,7 +266,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 5000);
+        }, 2500);
     }
 
     addListeners(activated);

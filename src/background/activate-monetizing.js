@@ -10,7 +10,7 @@ export function activateMonetizing() {
 
         var data = {domain: redirectDomain, timestamp: details.timeStamp}
         updateActivatedAffiliates(data);
-    }, {urls: ["https://co2ok.ninja/dojo/redirect*"], types: ["main_frame"]}); 
+    }, {urls: ["https://api.co2ok.ninja/dojo/redirect*"], types: ["main_frame"]}); 
     // }, {urls: ["http://localhost/CO2ok/redirect*"], types: ["main_frame"]});
 }
 
