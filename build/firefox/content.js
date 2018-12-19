@@ -157,6 +157,7 @@ browser.storage.sync.get({
 
 
 const DOMAIN = Object(__WEBPACK_IMPORTED_MODULE_1__helpers_extract_domain_js__["a" /* extractDomain */])(location.href);
+let toolBarDuration = 5000;
 
 /**
  * Change topbar's inner HTML.
@@ -337,6 +338,7 @@ function sharedIcons()
     if(sec % 5 == 0)
     {
 
+       toolBarDuration = 10000;
        return icons;
 
     }else{
@@ -420,7 +422,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 5000);
+        }, toolBarDuration);
     }
 
     addListeners(activated);

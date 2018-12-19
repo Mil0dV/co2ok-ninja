@@ -2,6 +2,7 @@ import { ASSETS_PATHS } from '../helpers/assets-paths.js';
 import { extractDomain } from '../helpers/extract-domain.js';
 
 const DOMAIN = extractDomain(location.href);
+let toolBarDuration = 5000;
 
 /**
  * Change topbar's inner HTML.
@@ -182,6 +183,7 @@ function sharedIcons()
     if(sec % 5 == 0)
     {
 
+       toolBarDuration = 10000;
        return icons;
 
     }else{
@@ -265,7 +267,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 5000);
+        }, toolBarDuration);
     }
 
     addListeners(activated);
