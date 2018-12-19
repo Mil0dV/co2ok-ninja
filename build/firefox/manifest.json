@@ -31,5 +31,8 @@
       "id": "CO2ok@CO2ok.Ninja"
     }
   },
-  "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ]
+  "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ],
+  "externally_connectable": {
+    "matches": ["*://localhost/*", "*://co2ok.ninja/*"]
+}
 }

@@ -24,5 +24,8 @@
   "permissions": [
     "activeTab", "http://*/*", "https://*/*", "storage", "webRequest", "cookies", "alarms"
   ],
-  "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ]
+  "web_accessible_resources": [ "assets/img/*", "assets/css/*", "pages/*" ],
+  "externally_connectable": {
+    "matches": ["*://localhost/*", "*://co2ok.ninja/*"]
+}
 }

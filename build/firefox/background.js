@@ -162,6 +162,23 @@ Object(__WEBPACK_IMPORTED_MODULE_3__background_deactivate_monetizing_js__["a" /*
 
 Object(__WEBPACK_IMPORTED_MODULE_4__background_recognize_other_affiliates_js__["a" /* recognizeOtherAffiliates */])();
 
+// browser.runtime.onMessageExternal.addListener(
+//     function(request, sender, sendResponse) {
+//         if (request) {
+//             if (request.message) {
+//                 if (request.message == "version") {
+//                     sendResponse({version: 1.0});
+//                 }
+//             }
+//         }
+//         return true;
+//     });
+
+browser.runtime.onMessageExternal.addListener(function(message, sender, sendResponse) {
+    alert("message received");
+});
+
+
 /***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
