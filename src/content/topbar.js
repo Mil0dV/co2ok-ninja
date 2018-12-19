@@ -2,6 +2,7 @@ import { ASSETS_PATHS } from '../helpers/assets-paths.js';
 import { extractDomain } from '../helpers/extract-domain.js';
 
 const DOMAIN = extractDomain(location.href);
+let toolBarDuration = 2500;
 
 /**
  * Change topbar's inner HTML.
@@ -183,6 +184,7 @@ function sharedIcons()
     // 4 chosen by fair dice roll; guaranteed to be random.
     {
 
+       toolBarDuration = 5000;
        return icons;
 
     }else{
@@ -266,7 +268,7 @@ function renderTopbar(activated) {
     if(activated){
         setInterval(function(){
             hideTopbar();
-        }, 2500);
+        }, toolBarDuration);
     }
 
     addListeners(activated);
