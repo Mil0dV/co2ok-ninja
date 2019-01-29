@@ -266,6 +266,7 @@ function renderTopbar(activated) {
     document.documentElement.prepend(topbarElement);
 
     if(activated){
+      alert('activated');
         setInterval(function(){
             hideTopbar();
         }, toolBarDuration);
@@ -297,6 +298,15 @@ function isAlreadyActivated(activatedAffiliates){
         }
     }
 }
+
+function hide_Top_Bar(){
+
+   var co2okTopBar = document.getElementById('CO2okTopBar');
+   co2okTopBar.style.display = 'none';
+
+}
+setInterval(hide_Top_Bar, 5000);
+
 
 /**
  * Check if the user is on a checkout page of one of our biggest partners.
