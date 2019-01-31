@@ -114,11 +114,31 @@ hr {
   margin: 10px 0;
 }
 
+.checkbox-container{
+  width: 72%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -45px;
+}
+
+.checkbox-container p{
+  width: auto;
+  height: auto;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 3px;
+}
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 35px;
+  height: 20px;
+  margin-right: 3px;
 }
 
 .switch-margins {
@@ -151,10 +171,10 @@ hr {
 .slider::before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -169,9 +189,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider::before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
 }
 
 /* Rounded sliders */

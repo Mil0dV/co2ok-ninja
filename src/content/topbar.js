@@ -1,9 +1,9 @@
 import { ASSETS_PATHS } from '../helpers/assets-paths.js';
 import { extractDomain } from '../helpers/extract-domain.js';
+// import { gifCheckbox_status } from '../pages/options.js';
 
 const DOMAIN = extractDomain(location.href);
 let toolBarDuration = 2500;
-
 /**
  * Change topbar's inner HTML.
  */
@@ -57,7 +57,15 @@ function addListeners(activated){
     });
 }
 
-
+// function item(){
+//   chrome.storage.sync.get("gifCheckboxStatus",function(items){
+//     if (!chrome.runtime.error) {
+//        console.log(`get: ${items.gifCheckboxStatus}`);
+//      }
+//   })
+//   console.log('t es la');
+// }
+// item();
 function CO2okTopBarButton(url)
 {
 
@@ -111,6 +119,21 @@ function CO2okTopBarButton(url)
 }
 
 
+function getShopUrl()
+{
+
+  let current_shopUrl = location.href;
+  chrome.storage.sync.set({"current_shopUrl":current_shopUrl},function(){
+    if (chrome.runtime.error) {
+       console.log("Runtime error.");
+     }
+     console.log(`set: ${current_shopUrl}`);
+  })
+
+}
+getShopUrl();
+
+
 function confirmButtClicked()
 {
 
@@ -129,6 +152,18 @@ function confirmButtClicked()
 //confirmButtClicked();
 
 
+function gifStatus(){
+  chrome.storage.sync.get("gifCheckboxStatus",function(items){
+    if (!chrome.runtime.error) {
+        let gifCheckboxStatus = items.gifCheckboxStatus
+
+        console.log(`get: ${gifCheckboxStatus}`);
+     }
+  })
+}
+window.addEventListener('load', function(){gifStatus();})
+
+
 function thanksBar()
 {
 
@@ -141,10 +176,8 @@ function thanksBar()
     <img src=${chrome.extension.getURL('assets/img/cancel.png')} id=CO2okTopBarIcon>
     <div class='thanksBar'>
 
-    <img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt=''>
-
-    ${sharedIcons()}
-
+     <div id="co2okgifsContainer"><img src='${chrome.extension.getURL(gifsArr[randSrc])}' alt='' id=co2okgifs></div>
+     ${sharedIcons()}
 
     </div>
 
@@ -266,7 +299,27 @@ function renderTopbar(activated) {
     document.documentElement.prepend(topbarElement);
 
     if(activated){
-      alert('activated');
+
+      let co2okgifs = document.getElementById('co2okgifs');
+      let co2okgifsContainer = document.getElementById('co2okgifsContainer');
+
+      chrome.storage.sync.get("gifCheckboxStatus",function(items){
+        if (!chrome.runtime.error) {
+            let gifCheckboxStatus = items.gifCheckboxStatus;
+            console.log(`getter: ${gifCheckboxStatus}`);
+            if(gifCheckboxStatus){
+
+            }else{
+              co2okgifs.style.display = 'none';
+
+              let a = `<a  href='https://CO2ok.Ninja' class='logoLink'><img style="width: 200px; height: 170px;" src="${chrome.extension.getURL('assets/img/icon.png')}"></a>`;
+              // let pInfo = `<p> ${chrome.i18n.getMessage('topbarActivatedInfo')} </p>`;
+              co2okgifsContainer.innerHTML = a;
+
+            }
+         }
+       })
+
         setInterval(function(){
             hideTopbar();
         }, toolBarDuration);
@@ -305,7 +358,7 @@ function hide_Top_Bar(){
    co2okTopBar.style.display = 'none';
 
 }
-setInterval(hide_Top_Bar, 5000);
+setInterval(hide_Top_Bar, 2500);
 
 
 /**
@@ -328,6 +381,7 @@ function isCheckoutPage() {
         return false;
     }
 }
+
 
 export default function () {
     chrome.storage.local.get({

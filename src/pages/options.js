@@ -101,48 +101,21 @@ localizeHtmlPage();
 document.addEventListener('DOMContentLoaded', restore_options);
 // document.getElementById('add_suggestion_box').addEventListener('click',
 //     save_options);
-document.getElementById('add_top_bar').addEventListener('click',
-    save_options);
+// document.getElementById('add_top_bar').addEventListener('click',
+//     save_options);
 
 
     function CO2okTopBarButton()
     {
 
-      const DOMAIN = extractDomain(location.href);
       let co2logo = chrome.extension.getURL('assets/img/logo.svg');
-      let co2logowhite = chrome.extension.getURL('assets/img/logo_wit.svg');
-      let url;
-
-      if(DOMAIN.indexOf('ebay') !== -1) {
-
-        url = 'confirm.php';
-
-      }
-      else {
-
-          url = 'redirect.php';
-      }
 
       let confirmButt = `
 
 
           <div id=CO2okTopBarCTA>
 
-            <a href='https://api.co2ok.ninja/dojo/${url}?url=${location.href}&lang=${chrome.i18n.getUILanguage()}' class='confirmButt' style='text-decoration: none;'
-
-              onmouseover="
-
-                let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logowhite}';
-
-              "
-
-              onmouseout="
-
-                let logoSrc = document.querySelector('.confirmButt img'); logoSrc.src = '${co2logo}';
-
-              "
-
-            >
+            <a href='' target="_blank" class='confirmButt' style='text-decoration: none;' >
 
               <div class="shopText">${chrome.i18n.getMessage('topbarActivateButton')}</div>
               <img src='${co2logo}' alt=''>
@@ -154,13 +127,105 @@ document.getElementById('add_top_bar').addEventListener('click',
       `;
 
       return confirmButt;
-
-      // let innerHTML = template({
-      //     ASSETS_PATHS: ASSETS_PATHS,
-      //     content: confirmButt,
-      // });
-
     }
 
     let ninjaBtn = document.getElementById('ninja-btn');
     ninjaBtn.innerHTML = CO2okTopBarButton();
+    let confirmBtn = document.querySelector('#ninja-btn .confirmButt');
+
+    function ninjaOption_btlUrl()
+    {
+
+      chrome.storage.sync.get("current_shopUrl",function(items){
+        if (!chrome.runtime.error) {
+
+            console.log(`geturl: ${items.current_shopUrl}`);
+            const DOMAIN = extractDomain(items.current_shopUrl);
+            let url;
+
+            if(DOMAIN.indexOf('ebay') !== -1) {
+
+              url = 'confirm.php';
+
+            }
+            else {
+
+                url = 'redirect.php';
+            }
+
+            confirmBtn.setAttribute('href', `https://api.co2ok.ninja/dojo/${url}?url=${items.current_shopUrl}&lang=${chrome.i18n.getUILanguage()}`);
+            console.log(confirmBtn.href);
+
+         }
+      })
+
+    }
+    ninjaOption_btlUrl();
+
+    function optionNinja_btnHover()
+    {
+
+      let co2oklogo = document.querySelector('#ninja-btn img');
+      let co2oklogo_src = chrome.extension.getURL('assets/img/logo.svg');
+      let co2oklogo_srcwhite = chrome.extension.getURL('assets/img/logo_wit.svg');
+
+       confirmBtn.addEventListener('mouseover', function(){
+          co2oklogo.src = co2oklogo_srcwhite;
+       })
+
+       confirmBtn.addEventListener('mouseout', function(){
+          co2oklogo.src = co2oklogo_src;
+       })
+
+    }
+    optionNinja_btnHover();
+
+   function gifCheckbox_status(){
+      let gifStatusTxt = document.getElementById('gif-status');
+      let gifCheckboxStatus = gifCheckbox.checked;
+      return gifCheckboxStatus;
+    }
+
+    let gifCheckbox = document.getElementById('gif-checkbox');
+    function turnGif_onOff(status)
+    {
+
+      let gifStatusTxt = document.getElementById('gif-status');
+      let gifCheckboxStatus = gifCheckbox.checked;
+
+      if(gifCheckboxStatus)
+      {
+        gifStatusTxt.innerHTML = 'GIF AAN';
+      }else{
+        gifStatusTxt.innerHTML = 'GIF UIT';
+      }
+
+      chrome.storage.sync.set({"gifCheckboxStatus":status},function(){
+        if (chrome.runtime.error) {
+           console.log("Runtime error.");
+         }
+         console.log(`set: ${gifCheckboxStatus}`);
+      })
+
+      chrome.storage.sync.get("gifCheckboxStatus",function(items){
+        if (!chrome.runtime.error) {
+             console.log(`get1: ${items.gifCheckboxStatus}`);
+             // gifCheckbox.checked = items.gifCheckboxStatus;
+             if(items.gifCheckboxStatus){
+               gifCheckbox.setAttribute('checked','checked');
+             }else{
+               gifCheckbox.removeAttribute('checked');
+             }
+         }
+      })
+
+    }
+
+    turnGif_onOff(gifCheckbox.checked);
+
+    gifCheckbox.addEventListener('change', function(){
+
+       let gifCheckboxStatus = gifCheckbox.checked;
+       turnGif_onOff(gifCheckboxStatus);
+
+    });

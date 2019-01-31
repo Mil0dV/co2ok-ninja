@@ -197,12 +197,39 @@
 
 }
 
+#co2okgifsContainer{
+
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.co2okgifsContainer .logoLink{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+}
 
 .thanksBar img
 {
 
   width: 98%;
   height: 200px;
+
+}
+
+.co2okgifsContainer p{
+
+  margin-top: 0px;
+  font-size: 15px;
 
 }
 
