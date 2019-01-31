@@ -193,12 +193,12 @@ document.addEventListener('DOMContentLoaded', restore_options);
       let gifStatusTxt = document.getElementById('gif-status');
       let gifCheckboxStatus = gifCheckbox.checked;
 
-      if(gifCheckboxStatus)
-      {
-        gifStatusTxt.innerHTML = 'GIF AAN';
-      }else{
-        gifStatusTxt.innerHTML = 'GIF UIT';
-      }
+      // if(gifCheckboxStatus)
+      // {
+      //   gifStatusTxt.innerHTML = chrome.i18n.getMessage('showGifs');
+      // }else{
+      //   gifStatusTxt.innerHTML = chrome.i18n.getMessage('showGifs');
+      // }
 
       chrome.storage.sync.set({"gifCheckboxStatus":status},function(){
         if (chrome.runtime.error) {

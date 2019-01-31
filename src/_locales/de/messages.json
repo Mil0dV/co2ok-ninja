@@ -43,5 +43,9 @@
     },
     "optionsThankYou": {
         "message": ""
+    },
+    "showGifs":
+    {
+      "message": "zeige gif"
     }
 }

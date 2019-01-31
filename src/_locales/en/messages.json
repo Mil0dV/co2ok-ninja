@@ -47,5 +47,9 @@
     "shareMsg":
     {
     "message": "  Help us reach more people who will spread the word.</br>Let's fight climate change together!"
-    }
+  },
+  "showGifs":
+  {
+    "message": "show gifs"
+  }
 }

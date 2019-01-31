@@ -46,5 +46,9 @@
     },
     "shareMsg":{
       "message": "Aidez-nous à atteindre plus de personnes qui propageront le mot.</br>Combattons le changement climatique ensemble!"
+    },
+    "showGifs":
+    {
+      "message": "afficher les gifs"
     }
 }
