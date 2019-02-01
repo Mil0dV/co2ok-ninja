@@ -199,8 +199,8 @@ function sharedIcons()
 
         <div class="sharedMedia">
 
-          <a href="https://www.facebook.com/sharer?u=https%3A%2F%2Fco2ok.eco%2Fen%2Fninja%2F" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
-          <a href="https://twitter.com/intent/tweet?text=Install%20a%20browser%20extension%20and%20when%20you%20purchase%20stuff%20online%2C%20you%20help%20fight%20against%20climate%20change!%20Check%20out%3A%20http%3A%2F%2Fco2ok.eco%2Fen%2Fninja%2F" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
+          <a href="https://www.facebook.com/sharer?u=https%3A%2F%2Fco2ok.ninja%2F" target="_blank" class="facebook"><img src="${chrome.extension.getURL('assets/img/facebook.svg')}"><span>Share</span></a>
+          <a href="https://twitter.com/intent/tweet?text=Install%20a%20browser%20extension%20and%20when%20you%20purchase%20stuff%20online%2C%20you%20help%20fight%20against%20climate%20change!%20Check%20out%3A%20http%3A%2F%2Fco2ok.ninja%2F" target="_blank" class="twitter"><img src="${chrome.extension.getURL('assets/img/twitter.svg')}"><span>Share</span></a>
 
         </div>
 
@@ -358,7 +358,7 @@ function hide_Top_Bar(){
    co2okTopBar.style.display = 'none';
 
 }
-setInterval(hide_Top_Bar, 2500);
+setInterval(hide_Top_Bar, 3000);
 
 
 /**
