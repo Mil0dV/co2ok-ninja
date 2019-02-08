@@ -47,5 +47,22 @@
     "showGifs":
     {
       "message": "zeige gif"
+    },
+    "feedbackForm":
+    {
+    "message": "https://goo.gl/forms/wiDDzflngqmsagDd2"
+    },
+    "feedback":
+    {
+      "message": "Hinterlasse ein Kommentar"
+    },
+    "ourSite":
+    {
+      "message": "Besuchen Sie unsere Website"
+    },
+    "share":
+    {
+      "message": "Hilfe eine größere Wirkung erzielen:"
     }
+
 }

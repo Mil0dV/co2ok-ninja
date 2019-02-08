@@ -23,6 +23,77 @@ html {
   min-width: 300px;
 }
 
+.links-container{
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.links-container a{
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.links-container a img{
+  width: 20px;
+  height: 20px;
+}
+
+.links-container a span{
+  margin-left: 3px;
+}
+
+.links-container a:hover{
+  color: #0abe51;
+  transform: scale(1.05,1.05);
+}
+
+.share-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.share-container a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-container a span{
+  margin-left: 3px;
+}
+
+.share-container a img{
+  width: 25px;
+  height: 25px;
+}
+
+.links-container p{
+  width: 200px;
+  height: auto;
+  margin: 0px;
+  margin-bottom: 7px;
+  margin-left: -3px;
+  font-weight: bold;
+  font-size: 15px;
+
+}
+
 @media (min-width: 480px) {
   .container {
     margin-top: 20px;
@@ -115,13 +186,24 @@ hr {
 }
 
 .checkbox-container{
-  width: 72%;
+  width: 83%;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: -45px;
+}
+
+.checkbox-items{
+  width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    right: 40px;
 }
 
 .checkbox-container p{
@@ -136,7 +218,7 @@ hr {
 .switch {
   position: relative;
   display: inline-block;
-  width: 35px;
+  width: 34px;
   height: 20px;
   margin-right: 3px;
 }

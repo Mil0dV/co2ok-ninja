@@ -57,15 +57,7 @@ function addListeners(activated){
     });
 }
 
-// function item(){
-//   chrome.storage.sync.get("gifCheckboxStatus",function(items){
-//     if (!chrome.runtime.error) {
-//        console.log(`get: ${items.gifCheckboxStatus}`);
-//      }
-//   })
-//   console.log('t es la');
-// }
-// item();
+
 function CO2okTopBarButton(url)
 {
 
@@ -287,6 +279,15 @@ function renderTopbar(activated) {
 
     let topbarElement = document.createElement('div');
     topbarElement.id = 'CO2ok';
+
+    let topbarActivated = activated;
+    // let topbarclass = document.querySelector('#CO2okTopBar').id;
+    // chrome.storage.sync.set({"topbarclass":topbarclass},function(){
+    //   if (chrome.runtime.error) {
+    //      console.log("Runtime error.");
+    //    }
+    //    console.log(`settopbar: ${topbarclass}`);
+    // })
     //arabic should be displayed from the right to the left
     if (chrome.i18n.getUILanguage() == 'ar') {
         topbarElement.dir = 'rtl';
@@ -326,6 +327,7 @@ function renderTopbar(activated) {
     }
 
     addListeners(activated);
+
 }
 
 
@@ -355,6 +357,27 @@ function isAlreadyActivated(activatedAffiliates){
 function hide_Top_Bar(){
 
    var co2okTopBar = document.getElementById('CO2okTopBar');
+   var co2okTopBarActivated;
+
+   if(co2okTopBar){
+     co2okTopBarActivated = true;
+     chrome.storage.sync.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
+       if (chrome.runtime.error) {
+          console.log("Runtime error.");
+        }
+        console.log(`settopbar: ${co2okTopBarActivated}`);
+     })
+   }else{
+     co2okTopBarActivated = false;
+     chrome.storage.sync.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
+       if (chrome.runtime.error) {
+          console.log("Runtime error.");
+        }
+        console.log(`settopbar: ${co2okTopBarActivated}`);
+     })
+   }
+   // check of ninja topbar is active and hide de ninja option co2ok button
+
    co2okTopBar.style.display = 'none';
 
 }

@@ -47,9 +47,26 @@
     "shareMsg":
     {
     "message": "  Help us reach more people who will spread the word.</br>Let's fight climate change together!"
-  },
-  "showGifs":
-  {
-    "message": "show gifs"
-  }
+    },
+    "showGifs":
+    {
+      "message": "show gifs"
+    },
+    "feedbackForm":
+    {
+    "message": "https://goo.gl/forms/HqI2aIuYIT3Slpt22"
+    },
+    "feedback":
+    {
+      "message": "Give us feedback"
+    },
+    "ourSite":
+    {
+      "message": "Your profile"
+    },
+    "share":
+    {
+      "message": "Help make a bigger impact:"
+    }
+
 }

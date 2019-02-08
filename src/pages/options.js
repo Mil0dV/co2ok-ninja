@@ -229,3 +229,13 @@ document.addEventListener('DOMContentLoaded', restore_options);
        turnGif_onOff(gifCheckboxStatus);
 
     });
+
+    function display_optionNinjaBtn(){
+      chrome.storage.sync.get("co2okTopBarActivated",function(items){
+        if (!chrome.runtime.error) {
+            console.log(`gettopbar: ${items.co2okTopBarActivated}`);
+         }
+      })
+      console.log('hallo there');
+    }
+    display_optionNinjaBtn();
