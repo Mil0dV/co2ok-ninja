@@ -117,9 +117,8 @@ function getShopUrl()
   let current_shopUrl = location.href;
   chrome.storage.sync.set({"current_shopUrl":current_shopUrl},function(){
     if (chrome.runtime.error) {
-       console.log("Runtime error.");
+       // console.log("Runtime error.");
      }
-     console.log(`set: ${current_shopUrl}`);
   })
 
 }
@@ -136,7 +135,7 @@ function confirmButtClicked()
      count++;
      let locastorage = window.localStorage.setItem('count', count);
      window.localStorage.getItem('count');
-     console.log(locastorage);
+     // console.log(locastorage);
 
    })
 
@@ -149,7 +148,7 @@ function gifStatus(){
     if (!chrome.runtime.error) {
         let gifCheckboxStatus = items.gifCheckboxStatus
 
-        console.log(`get: ${gifCheckboxStatus}`);
+        // console.log(`get: ${gifCheckboxStatus}`);
      }
   })
 }
@@ -307,7 +306,7 @@ function renderTopbar(activated) {
       chrome.storage.sync.get("gifCheckboxStatus",function(items){
         if (!chrome.runtime.error) {
             let gifCheckboxStatus = items.gifCheckboxStatus;
-            console.log(`getter: ${gifCheckboxStatus}`);
+            // console.log(`getter: ${gifCheckboxStatus}`);
             if(gifCheckboxStatus){
 
             }else{
@@ -321,7 +320,7 @@ function renderTopbar(activated) {
          }
        })
 
-        setInterval(function(){
+        setTimeout(function(){
             hideTopbar();
         }, toolBarDuration);
     }
@@ -354,34 +353,37 @@ function isAlreadyActivated(activatedAffiliates){
     }
 }
 
+function co2okTopbar_activatedStatus(){
+  var co2okTopBar = document.getElementById('CO2okTopBar');
+  var co2okTopBarActivated;
+
+  if(co2okTopBar){
+    co2okTopBarActivated = true;
+    chrome.storage.local.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
+      if (chrome.runtime.error) {
+         // console.log("Runtime error.");
+       }
+       // console.log(`settopbar: ${co2okTopBarActivated}`);
+    })
+  }else{
+    co2okTopBarActivated = false;
+    chrome.storage.local.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
+      if (chrome.runtime.error) {
+         console.log("Runtime error.");
+       }
+       console.log(`settopbar: ${co2okTopBarActivated}`);
+    })
+  }
+}
+
 function hide_Top_Bar(){
-
-   var co2okTopBar = document.getElementById('CO2okTopBar');
-   var co2okTopBarActivated;
-
-   if(co2okTopBar){
-     co2okTopBarActivated = true;
-     chrome.storage.sync.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
-       if (chrome.runtime.error) {
-          console.log("Runtime error.");
-        }
-        console.log(`settopbar: ${co2okTopBarActivated}`);
-     })
-   }else{
-     co2okTopBarActivated = false;
-     chrome.storage.sync.set({"co2okTopBarActivated":co2okTopBarActivated},function(){
-       if (chrome.runtime.error) {
-          console.log("Runtime error.");
-        }
-        console.log(`settopbar: ${co2okTopBarActivated}`);
-     })
-   }
+  var co2okTopBar = document.getElementById('CO2okTopBar');
    // check of ninja topbar is active and hide de ninja option co2ok button
-
+   co2okTopbar_activatedStatus();
    co2okTopBar.style.display = 'none';
 
 }
-setInterval(hide_Top_Bar, 3000);
+setTimeout(hide_Top_Bar, 3000);
 
 
 /**
@@ -404,6 +406,14 @@ function isCheckoutPage() {
         return false;
     }
 }
+
+document.addEventListener("visibilitychange", function() {
+  if (document.hidden){
+      co2okTopbar_activatedStatus();
+  } else {
+      co2okTopbar_activatedStatus();
+  }
+});
 
 
 export default function () {

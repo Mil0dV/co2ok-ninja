@@ -130,7 +130,15 @@ document.addEventListener('DOMContentLoaded', restore_options);
     }
 
     let ninjaBtn = document.getElementById('ninja-btn');
-    ninjaBtn.innerHTML = CO2okTopBarButton();
+
+    chrome.storage.local.get(["co2okTopBarActivated"],function(items){
+      if (!chrome.runtime.error) {
+          // console.log(`gettopbar: ${items.co2okTopBarActivated}`);
+          if(items.co2okTopBarActivated){
+            ninjaBtn.innerHTML = CO2okTopBarButton();
+          }
+       }
+    })
     let confirmBtn = document.querySelector('#ninja-btn .confirmButt');
 
     function ninjaOption_btlUrl()
@@ -139,7 +147,7 @@ document.addEventListener('DOMContentLoaded', restore_options);
       chrome.storage.sync.get("current_shopUrl",function(items){
         if (!chrome.runtime.error) {
 
-            console.log(`geturl: ${items.current_shopUrl}`);
+            // console.log(`geturl: ${items.current_shopUrl}`);
             const DOMAIN = extractDomain(items.current_shopUrl);
             let url;
 
@@ -154,7 +162,7 @@ document.addEventListener('DOMContentLoaded', restore_options);
             }
 
             confirmBtn.setAttribute('href', `https://api.co2ok.ninja/dojo/${url}?url=${items.current_shopUrl}&lang=${chrome.i18n.getUILanguage()}`);
-            console.log(confirmBtn.href);
+            // console.log(confirmBtn.href);
 
          }
       })
@@ -202,14 +210,14 @@ document.addEventListener('DOMContentLoaded', restore_options);
 
       chrome.storage.sync.set({"gifCheckboxStatus":status},function(){
         if (chrome.runtime.error) {
-           console.log("Runtime error.");
+           // console.log("Runtime error.");
          }
          console.log(`set: ${gifCheckboxStatus}`);
       })
 
       chrome.storage.sync.get("gifCheckboxStatus",function(items){
         if (!chrome.runtime.error) {
-             console.log(`get1: ${items.gifCheckboxStatus}`);
+             // console.log(`get1: ${items.gifCheckboxStatus}`);
              // gifCheckbox.checked = items.gifCheckboxStatus;
              if(items.gifCheckboxStatus){
                gifCheckbox.setAttribute('checked','checked');
@@ -231,11 +239,10 @@ document.addEventListener('DOMContentLoaded', restore_options);
     });
 
     function display_optionNinjaBtn(){
-      chrome.storage.sync.get("co2okTopBarActivated",function(items){
+      chrome.storage.local.get(["co2okTopBarActivated"],function(items){
         if (!chrome.runtime.error) {
-            console.log(`gettopbar: ${items.co2okTopBarActivated}`);
+            // console.log(`gettopbar: ${items.co2okTopBarActivated}`);
          }
       })
-      console.log('hallo there');
     }
     display_optionNinjaBtn();
