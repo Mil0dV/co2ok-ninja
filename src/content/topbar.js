@@ -408,10 +408,10 @@ function isCheckoutPage() {
 }
 
 document.addEventListener("visibilitychange", function() {
-  if (document.hidden){
+  if (!document.hidden){
       co2okTopbar_activatedStatus();
-  } else {
-      co2okTopbar_activatedStatus();
+  // } else {
+  //     co2okTopbar_activatedStatus();
   }
 });
 
