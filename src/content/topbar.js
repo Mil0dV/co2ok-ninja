@@ -158,8 +158,7 @@ window.addEventListener('load', function(){gifStatus();})
 function thanksBar()
 {
 
-//  let gifsArr = ["assets/img/happy-globe.mp4", "assets/img/happy-piggy-loop.mp4", "assets/img/happy-flower.mp4", 'assets/img/cat-high-five.mp4'];
-  let gifsArr = ["assets/img/happy-globe.gif", "assets/img/happy-piggy.gif", "assets/img/happyflower.gif", 'assets/img/cat-high-five.gif'];
+  let gifsArr = ["assets/img/happy-globe.gif", "assets/img/happy-piggy.gif", "assets/img/happyflower.gif", "assets/img/cat-high-five.gif", "assets/img/globe-high-five.gif", "assets/img/globe-sprout.gif", "assets/img/heart-earth.gif", "assets/img/make-globe-happy.gif"];
   let randSrc = Math.floor(Math.random() * gifsArr.length);
   let CO2okTopBarLogoLink = document.getElementById('CO2okTopBarLogoLink');
   let thanksBar = `
@@ -306,6 +305,7 @@ function renderTopbar(activated) {
       chrome.storage.sync.get("gifCheckboxStatus",function(items){
         if (!chrome.runtime.error) {
             let gifCheckboxStatus = items.gifCheckboxStatus;
+            
             // console.log(`getter: ${gifCheckboxStatus}`);
             if(gifCheckboxStatus){
 

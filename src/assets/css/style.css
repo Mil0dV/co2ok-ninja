@@ -34,7 +34,7 @@ html {
 }
 
 .links-container a{
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
   color: #222;
   width: auto;
@@ -155,7 +155,7 @@ html {
 .col-75 {
   float: left;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media (min-width: 480px) {
