@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', restore_options);
     ninjaBtn.innerHTML = CO2okTopBarButton();
     let confirmBtn = document.querySelector('#ninja-btn .confirmButt');
 
-    function ninjaOption_btlUrl()
+    function ninjaOption_btnUrl()
     {
 
       chrome.storage.sync.get("current_shopUrl",function(items){
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', restore_options);
       })
 
     }
-    ninjaOption_btlUrl();
+    ninjaOption_btnUrl();
 
     function optionNinja_btnHover()
     {
@@ -168,6 +168,8 @@ document.addEventListener('DOMContentLoaded', restore_options);
       let co2oklogo = document.querySelector('#ninja-btn img');
       let co2oklogo_src = chrome.extension.getURL('assets/img/logo.svg');
       let co2oklogo_srcwhite = chrome.extension.getURL('assets/img/logo_wit.svg');
+      let confirmBtn = document.querySelector('#ninja-btn .confirmButt');
+
 
        confirmBtn.addEventListener('mouseover', function(){
           co2oklogo.src = co2oklogo_srcwhite;
